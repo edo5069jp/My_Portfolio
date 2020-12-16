@@ -1,0 +1,777 @@
+@charset "UTF-8";
+/* ========================================
+    リセットcss
+========================================= */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+html {
+  overflow-y: scroll; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+input, textarea {
+  margin: 0;
+  padding: 0; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th {
+  text-align: left; }
+
+a:focus {
+  outline: none; }
+
+/* ========================================
+    全体設定
+========================================= */
+body {
+  color: #000;
+  background-image: url("image/wallpaper.jpg");
+  background-attachment: fixed;
+  font-size: 14px;
+  line-height: 1.4em;
+  font-family: "游明朝", "YuGothic", "Yu Gothic", "Yu Mincho", "YuMincho", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+a {
+  color: #474747;
+  text-decoration: none; }
+  a img {
+    -webkit-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out; }
+    a img:hover {
+      -webkit-filter: drop-shadow(0px 0px 5px #777);
+      -moz-filter: drop-shadow(0px 0px 5px #777);
+      -o-filter: drop-shadow(0px 0px 5px #777);
+      -ms-filter: drop-shadow(0px 0px 5px #777);
+      filter: drop-shadow(0px 0px 5px #777); }
+
+/* micro clearfix */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table; }
+
+.cf:after {
+  clear: both; }
+
+.cf {
+  *zoom: 1; }
+
+/* absolute inner */
+.box {
+  position: relative;
+  width: 60%;
+  height: auto; }
+
+.boxsize:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  /* 1:1 */ }
+
+.inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* absolute inner(メニュー用) */
+.menu-box {
+  position: relative;
+  width: 50%;
+  height: auto; }
+
+@media screen and (max-width: 1200px) {
+  .menu-box {
+    width: 60%; } }
+
+@media screen and (max-width: 896px) {
+  .menu-box {
+    width: 80%; } }
+
+/* ========================================
+    変数
+========================================= */
+/* ========================================
+    ハンバーガーメニュー & ページトップボタン
+========================================= */
+#hamburger-menu {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  width: 60px;
+  height: 70px;
+  padding: 10px;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px; }
+  #hamburger-menu:hover {
+    cursor: pointer;
+    -webkit-filter: drop-shadow(0px 0px 5px #999);
+    -moz-filter: drop-shadow(0px 0px 5px #999);
+    -o-filter: drop-shadow(0px 0px 5px #999);
+    -ms-filter: drop-shadow(0px 0px 5px #999);
+    filter: drop-shadow(0px 0px 5px #999); }
+  #hamburger-menu span {
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 6px;
+    display: inline-block;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    #hamburger-menu span:nth-of-type(1) {
+      top: 13px; }
+    #hamburger-menu span:nth-of-type(2) {
+      top: 33px; }
+    #hamburger-menu span:nth-of-type(3) {
+      top: 53px; }
+
+@media screen and (max-width: 640px) {
+  #hamburger-menu {
+    top: 10px;
+    right: 10px; } }
+
+#hamburger-menu.active span:nth-of-type(1) {
+  -webkit-transform: translateY(20px) rotate(-45deg);
+  -ms-transform: translateY(20px) rotate(-45deg);
+  transform: translateY(20px) rotate(-45deg); }
+
+#hamburger-menu.active span:nth-of-type(2) {
+  opacity: 0; }
+
+#hamburger-menu.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-20px) rotate(45deg);
+  -ms-transform: translateY(-20px) rotate(45deg);
+  transform: translateY(-20px) rotate(45deg); }
+
+#hamburger-menu::after {
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  content: 'メニュー';
+  display: block;
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+#hamburger-menu.active::after {
+  content: '閉じる'; }
+
+/* ナビ設定 */
+#head-wrapper nav {
+  display: none;
+  position: fixed;
+  width: 220px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 150px 50px 0 20px;
+  margin: 0 auto; }
+  #head-wrapper nav li {
+    -webkit-transition: 0.1s ease-in-out;
+    -o-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out; }
+    #head-wrapper nav li:hover {
+      cursor: pointer;
+      -webkit-filter: drop-shadow(0px 0px 5px #fff);
+      -moz-filter: drop-shadow(0px 0px 5px #fff);
+      -o-filter: drop-shadow(0px 0px 5px #fff);
+      -ms-filter: drop-shadow(0px 0px 5px #fff);
+      filter: drop-shadow(0px 0px 5px #fff); }
+
+#head-wrapper nav.open {
+  display: block; }
+
+/* ページトップボタン */
+#page-top {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  right: 30px;
+  bottom: 60px;
+  color: #fff;
+  font-size: 16px;
+  z-index: 9999; }
+  #page-top:hover {
+    cursor: pointer;
+    -webkit-filter: drop-shadow(0px 0px 5px #fff);
+    -moz-filter: drop-shadow(0px 0px 5px #fff);
+    -o-filter: drop-shadow(0px 0px 5px #fff);
+    -ms-filter: drop-shadow(0px 0px 5px #fff);
+    filter: drop-shadow(0px 0px 5px #fff); }
+  #page-top span {
+    position: absolute;
+    bottom: -30px;
+    left: 6px; }
+
+@media screen and (max-width: 640px) {
+  #page-top {
+    right: 10px;
+    bottom: 60px; } }
+
+/* ========================================
+    ヘッダー
+========================================= */
+header {
+  width: 100%;
+  background-color: #000;
+  padding-bottom: 30px; }
+  header #head-wrapper {
+    background-color: #000;
+    background-image: url(image/top_04.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative; }
+    header #head-wrapper #sns-logo {
+      position: absolute;
+      right: 140px;
+      top: 30px; }
+      header #head-wrapper #sns-logo img {
+        margin-right: 10px; }
+    header #head-wrapper #head-image {
+      padding: 30px 0 50px 30px; }
+    header #head-wrapper #head-menu {
+      padding-left: 30px; }
+      header #head-wrapper #head-menu img {
+        margin-bottom: 10px;
+        -webkit-transition: 0.2s ease-in-out;
+        -o-transition: 0.2s ease-in-out;
+        transition: 0.2s ease-in-out; }
+        header #head-wrapper #head-menu img:hover {
+          cursor: pointer;
+          -webkit-filter: drop-shadow(0px 0px 5px #777);
+          -moz-filter: drop-shadow(0px 0px 5px #777);
+          -o-filter: drop-shadow(0px 0px 5px #777);
+          -ms-filter: drop-shadow(0px 0px 5px #777);
+          filter: drop-shadow(0px 0px 5px #777); }
+
+@media screen and (max-width: 896px) {
+  header div#head-wrapper div#sns-logo {
+    display: none; }
+  header div#head-wrapper #head-image {
+    padding: 10px 0px 0px 10px; }
+    header div#head-wrapper #head-image img {
+      width: 50%; }
+  header div#head-wrapper #head-menu ul li img {
+    width: 30%; } }
+
+/* ========================================
+    メニュー
+========================================= */
+#main-menu {
+  width: 100%;
+  max-width: 1200px;
+  color: #fff;
+  margin: 0 auto; }
+  #main-menu h2 {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 75px;
+    font-weight: bold;
+    line-height: 50px;
+    text-shadow: 0 0 5px #000; }
+    #main-menu h2 span {
+      display: block;
+      font-size: 24px; }
+  #main-menu div p.radius {
+    font-size: 28px;
+    line-height: 40px;
+    text-align: center;
+    text-shadow: 0 0 5px #000;
+    background-color: rgba(204, 142, 59, 0.7);
+    border-radius: 50%;
+    width: 280px;
+    height: 230px;
+    padding-top: 50px; }
+  #main-menu div span {
+    font-size: 60px; }
+  #main-menu div span.yen {
+    font-size: 30px;
+    line-height: 50px;
+    text-decoration: underline; }
+  #main-menu #main-a {
+    width: 100%;
+    position: relative; }
+    #main-menu #main-a img {
+      position: absolute;
+      left: 0;
+      max-width: 100%;
+      height: auto; }
+    #main-menu #main-a p {
+      position: absolute;
+      left: 600px;
+      top: 30px; }
+    #main-menu #main-a .reccomend {
+      position: absolute;
+      left: 700px;
+      top: 300px;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 0 0 5px #000;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: rgba(201, 0, 0, 0.5);
+      padding-top: 30px;
+      width: 130px;
+      height: 100px; }
+  #main-menu #main-b {
+    position: relative; }
+    #main-menu #main-b img {
+      position: absolute;
+      right: 0;
+      max-width: 100%;
+      height: auto; }
+    #main-menu #main-b p {
+      position: absolute;
+      right: 600px;
+      top: 30px; }
+    #main-menu #main-b span.long-text {
+      font-size: 46px; }
+  #main-menu #main-c {
+    position: relative; }
+    #main-menu #main-c img {
+      position: absolute;
+      left: 0;
+      max-width: 100%;
+      height: auto; }
+    #main-menu #main-c p {
+      position: absolute;
+      left: 600px;
+      top: 30px; }
+
+#main-mb {
+  display: none; }
+
+@media screen and (max-width: 896px) {
+  #main-menu h2 {
+    padding: 30px 0;
+    font-size: 40px;
+    line-height: 30px; }
+    #main-menu h2 span {
+      font-size: 16px; }
+  #main-menu #main-a img, #main-menu #main-b img, #main-menu #main-c img {
+    width: 100%; }
+  #main-menu div p.radius {
+    font-size: 18px;
+    line-height: 26px;
+    width: 200px;
+    height: 144px;
+    padding-top: 40px; }
+  #main-menu div span {
+    font-size: 36px; }
+  #main-menu div span.yen {
+    font-size: 24px;
+    line-height: 30px; }
+  #main-menu #main-a img {
+    position: absolute;
+    left: -25%; }
+  #main-menu #main-a p {
+    left: 50%;
+    top: 0; }
+  #main-menu #main-a .reccomend {
+    left: 65%;
+    top: 170px;
+    font-size: 20px;
+    line-height: 20px;
+    width: 90px;
+    height: 60px;
+    padding-top: 20px; }
+  #main-menu #main-b img {
+    position: absolute;
+    right: 0;
+    width: 75%; }
+  #main-menu #main-b p {
+    position: absolute;
+    left: 6%;
+    top: 0; }
+  #main-menu #main-b span.long-text {
+    font-size: 30px; }
+  #main-menu #main-c img {
+    position: absolute;
+    left: -25%; }
+  #main-menu #main-c p {
+    left: 50%;
+    top: 0; }
+  #main-pc {
+    display: none; }
+  #main-mb {
+    display: inline-block; } }
+
+@media screen and (max-width: 480px) {
+  #main-menu div p.radius {
+    font-size: 3.5vw;
+    line-height: 6vw;
+    width: 40vw;
+    height: 30vw;
+    padding-top: 4vw; }
+  #main-menu div span {
+    font-size: 7vw; }
+  #main-menu div span.yen {
+    font-size: 5vw;
+    line-height: 6vw; }
+  #main-menu #main-a .reccomend {
+    top: 33vw;
+    font-size: 5vw;
+    line-height: 5.5vw;
+    width: 24vw;
+    height: 16vw;
+    padding-top: 5vw; }
+  #main-menu #main-b span.long-text {
+    font-size: 6vw; } }
+
+/* ========================================
+    サイドメニュー
+========================================= */
+#side-a dl, #side-b dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px #000; }
+  #side-a dl div:nth-child(2), #side-b dl div:nth-child(2) {
+    padding: 0 30px; }
+  #side-a dl dd p.yen, #side-b dl dd p.yen {
+    text-decoration: underline;
+    font-size: 24px; }
+
+@media screen and (max-width: 1060px) {
+  #side-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    #side-wrapper #side-a dl, #side-wrapper #side-b dl {
+      font-size: 26px;
+      display: inline-block; }
+      #side-wrapper #side-a dl div, #side-wrapper #side-b dl div {
+        padding: 10px; }
+      #side-wrapper #side-a dl dd p.yen, #side-wrapper #side-b dl dd p.yen {
+        font-size: 20px; } }
+
+@media screen and (max-width: 480px) {
+  #side-wrapper div dl div dt img {
+    width: 100%; } }
+
+/* ========================================
+    ドリンク
+========================================= */
+#drink {
+  font-size: 36px;
+  line-height: 40px;
+  text-shadow: 0 0 5px #000;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  #drink ul:first-child {
+    margin-right: 30px; }
+
+p#tax {
+  text-align: center;
+  font-size: 20px;
+  margin: 60px auto 200px;
+  text-shadow: 0 0 5px #000; }
+
+@media screen and (max-width: 896px) {
+  #drink {
+    font-size: 30px;
+    line-height: 40px; }
+  p#tax {
+    font-size: 16px;
+    margin-bottom: 80px; } }
+
+@media screen and (max-width: 480px) {
+  #drink {
+    font-size: 20px;
+    line-height: 30px; } }
+
+/* ========================================
+    こだわり
+========================================= */
+#policy-title {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  margin: 0 auto;
+  padding: 10px 0; }
+  #policy-title h2 {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 75px;
+    font-weight: bold;
+    line-height: 50px;
+    text-shadow: 0 0 5px #000; }
+    #policy-title h2 span {
+      display: block;
+      font-size: 24px; }
+
+@media screen and (max-width: 896px) {
+  #policy-title h2 {
+    padding-top: 10px;
+    font-size: 40px;
+    line-height: 30px; }
+    #policy-title h2 span {
+      font-size: 16px; } }
+
+#policy {
+  color: #fff; }
+
+#policy-a, #policy-b, #policy-c {
+  height: auto;
+  max-height: 600px;
+  min-height: 250px;
+  position: relative; }
+  #policy-a div.policy-text-background, #policy-b div.policy-text-background, #policy-c div.policy-text-background {
+    width: 100%;
+    max-width: 900px;
+    position: absolute;
+    top: 100px; }
+    #policy-a div.policy-text-background h3, #policy-b div.policy-text-background h3, #policy-c div.policy-text-background h3 {
+      font-size: 54px;
+      text-shadow: 0 0 10px #555;
+      margin-top: 60px;
+      margin-bottom: 30px;
+      letter-spacing: -2px; }
+    #policy-a div.policy-text-background p, #policy-b div.policy-text-background p, #policy-c div.policy-text-background p {
+      font-size: 24px;
+      line-height: 36px;
+      text-shadow: 0 0 5px #000;
+      margin-left: 5px;
+      margin-bottom: 40px;
+      letter-spacing: -2px; }
+
+@media screen and (max-width: 896px) {
+  #policy-a div.policy-text-background, #policy-b div.policy-text-background, #policy-c div.policy-text-background {
+    top: 24px; }
+    #policy-a div.policy-text-background h3, #policy-b div.policy-text-background h3, #policy-c div.policy-text-background h3 {
+      font-size: 5vw;
+      margin: 24px 0;
+      letter-spacing: -2px; }
+    #policy-a div.policy-text-background p, #policy-b div.policy-text-background p, #policy-c div.policy-text-background p {
+      font-size: 3vw;
+      line-height: 3.6vh;
+      text-shadow: 0 0 5px #000;
+      margin-left: 5px;
+      margin-bottom: 10px;
+      letter-spacing: -2px; } }
+
+@media screen and (max-width: 480px) {
+  #policy-a div.policy-text-background h3, #policy-b div.policy-text-background h3, #policy-c div.policy-text-background h3 {
+    margin: 10px 0; }
+  #policy-a div.policy-text-background p, #policy-b div.policy-text-background p, #policy-c div.policy-text-background p {
+    line-height: 2.5vh; } }
+
+#policy-a {
+  background-image: url(image/commit_01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top; }
+  #policy-a div.policy-text-background {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    left: 0; }
+
+#policy-b {
+  background-image: url(image/commit_02.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top; }
+  #policy-b div.policy-text-background {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.4)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
+    right: 0; }
+
+#policy-c {
+  background-image: url(image/commit_03.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top; }
+  #policy-c div.policy-text-background {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    left: 0; }
+
+/* ========================================
+    アクセス
+========================================= */
+#access-title {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  margin: 0 auto;
+  padding: 10px 0; }
+  #access-title h2 {
+    text-align: center;
+    padding: 30px 0 0;
+    font-size: 75px;
+    font-weight: bold;
+    line-height: 50px;
+    text-shadow: 0 0 5px #000; }
+    #access-title h2 span {
+      display: block;
+      font-size: 24px; }
+
+@media screen and (max-width: 896px) {
+  #access-title h2 {
+    padding-top: 10px;
+    font-size: 40px;
+    line-height: 30px; }
+    #access-title h2 span {
+      font-size: 16px; } }
+
+#access {
+  color: #fff;
+  font-size: 20px;
+  line-height: 25px;
+  height: auto;
+  text-align: left;
+  background-image: url(image/access_01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  #access div ul {
+    margin-bottom: 40px; }
+    #access div ul:first-child {
+      margin-top: 40px; }
+  #access #access-left ul li:first-child {
+    margin-bottom: 10px; }
+  #access #access-right {
+    margin-left: 100px; }
+    #access #access-right iframe {
+      margin-top: 30px;
+      max-height: 300px;
+      max-width: 100%; }
+
+@media screen and (max-width: 896px) {
+  #access div#access-right {
+    margin: 0 5px; } }
+
+@media screen and (max-width: 480px) {
+  #access {
+    font-size: 4vw; } }
+
+/* ========================================
+    フッター
+========================================= */
+footer {
+  background-color: #000;
+  text-align: center;
+  padding-bottom: 30px; }
+  footer div#footer-logo img {
+    width: 100%;
+    max-width: 540px; }
+  footer img {
+    -webkit-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out; }
+    footer img:hover {
+      cursor: pointer;
+      -webkit-filter: drop-shadow(0px 0px 5px #777);
+      -moz-filter: drop-shadow(0px 0px 5px #777);
+      -o-filter: drop-shadow(0px 0px 5px #777);
+      -ms-filter: drop-shadow(0px 0px 5px #777);
+      filter: drop-shadow(0px 0px 5px #777); }
+  footer div#sns-footer-logo {
+    width: 100%;
+    margin: 0 auto; }
+    footer div#sns-footer-logo img {
+      margin-right: 10px; }
+    footer div#sns-footer-logo p {
+      color: #fff;
+      margin-top: 30px; }
+
+@media screen and (max-width: 480px) {
+  div#sns-footer-logo {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    div#sns-footer-logo img {
+      width: 100%;
+      max-width: 50px; } }

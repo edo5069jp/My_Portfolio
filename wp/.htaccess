@@ -1,0 +1,21 @@
+#[PHP]
+php_flag mbstring.encoding_translation On 
+php_value mbstring.internal_encoding UTF-8
+php_value mbstring.script_encoding UTF-8 
+php_value memory_limit 55M
+php_value post_max_size 55M
+php_value upload_max_filesize 50M
+php_flag magic_quotes_gpc Off
+php_flag magic_quotes_runtime Off
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /wp/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /wp/index.php [L]
+</IfModule>
+
+# END WordPress

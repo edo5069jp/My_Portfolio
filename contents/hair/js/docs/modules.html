@@ -1,0 +1,458 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>modules.md</title>
+      </head>
+      <body>
+        <h2 id="modules">Modules</h2>
+<p>Modules are optional blocks of code that extend the plugin&#39;s core, adding more capabilities. This modular architecture makes the code more organized and also allows you to include only the features you will use, resulting in an optimized file size and performance.</p>
+<h3 id="1-fade">1. Fade</h3>
+<p>This module replaces the default slide/swipe transition with a fade transition.</p>
+<p>Customizable properties: <a href="api.md#fade">fade</a>, <a href="api.md#fadeoutpreviousslide">fadeOutPreviousSlide</a> and <a href="api.md#fadeduration">fadeDuration</a>.</p>
+<hr>
+<h3 id="2-caption">2. Caption</h3>
+<p>Allows you to add captions to slides. Captions will be displayed one at a time, below the slides. The caption must be given the <code>sp-caption</code> class.</p>
+<p><em>Example:</em></p>
+<pre><code class="lang-html">&lt;div class=&quot;sp-slide&quot;&gt;
+    &lt;img class=&quot;sp-image&quot; src=&quot;path/to/image.jpg&quot;/&gt;
+    &lt;p class=&quot;sp-caption&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Customizable properties: <a href="api.md#fadecaption">fadeCaption</a> and <a href="api.md#captionfadeduration">captionFadeDuration</a>.</p>
+<hr>
+<h3 id="3-full-screen">3. Full Screen</h3>
+<p>Allows you to view the slider in full-screen mode, in browsers where the HTML5 Full Screen API is supported. If full-screen is supported a button will be displayed in the top-right corner of the slider.</p>
+<p>Customizable properties: <a href="api.md#fullscreen">fullScreen</a> and <a href="api.md#fadefullscreen">fadeFullScreen</a>.</p>
+<hr>
+<h3 id="4-lazy-loading">4. Lazy Loading</h3>
+<p>Enables the slider to load images (slide images and thumbnail images) only when they are in a visible area, thus saving bandwidth by not loading images that won&#39;t be viewed by the user. It also makes the initial load of the slider much faster.</p>
+<p><em>Example:</em></p>
+<pre><code class="lang-html">&lt;div class=&quot;slider-pro&quot;&gt;
+    &lt;div class=&quot;sp-slides&quot;&gt;
+        &lt;div class=&quot;sp-slide&quot;&gt;
+            &lt;img class=&quot;sp-image&quot; src=&quot;path/to/blank.gif&quot; data-src=&quot;path/to/image1.jpg&quot;/&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;sp-slide&quot;&gt;
+            &lt;a href=&quot;http://bqworks.com&quot;&gt;
+                &lt;img class=&quot;sp-image&quot; src=&quot;path/to/blank.gif&quot; data-src=&quot;path/to/image2.jpg&quot;/&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;sp-slide&quot;&gt;
+            &lt;img class=&quot;sp-image&quot; src=&quot;path/to/blank.gif&quot; data-src=&quot;path/to/image3.jpg&quot;/&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sp-thumbnails&quot;&gt;
+        &lt;img class=&quot;sp-thumbnail&quot; src=&quot;path/to/blank.gif&quot; data-src=&quot;path/to/thumbnail1.jpg&quot;/&gt;
+        &lt;img class=&quot;sp-thumbnail&quot; src=&quot;path/to/blank.gif&quot; data-src=&quot;path/to/thumbnail2.jpg&quot;/&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>The <code>src</code> attribute of the image will point to a placeholder image, and the actual image will be specified in the <code>data-src</code> attribute. When the image becomes visible, the placeholder image will be replaced by the actual image. You can use the placeholder image that comes with the slider, or you can create your own placeholder image. The bundled placeholder image is located in dist/css/images/blank.gif and it&#39;s a 1 pixel by 1 pixel blank image.</p>
+<hr>
+<h3 id="5-retina">5. Retina</h3>
+<p>Allows you to specify an alternative image for screens with high PPI (pixels per inch), like the &#39;Retina&#39; screens from Apple devices. Please note that this module will work for any screen that has high PPI, not only for the &#39;Retina&#39; screens.</p>
+<p>The high resolution image needs to be specified in the <code>data-retina</code> attribute, as seen below.</p>
+<p><em>Example:</em></p>
+<pre><code class="lang-html">&lt;div class=&quot;slider-pro&quot;&gt;
+    &lt;div class=&quot;sp-slides&quot;&gt;
+        &lt;div class=&quot;sp-slide&quot;&gt;
+            &lt;img class=&quot;sp-image&quot; src=&quot;path/to/blank.gif&quot; data-src=&quot;path/to/image1.jpg&quot; data-src=&quot;path/to/image1@2x.jpg&quot;/&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;sp-slide&quot;&gt;
+            &lt;a href=&quot;http://bqworks.com&quot;&gt;
+                &lt;img class=&quot;sp-image&quot; src=&quot;path/to/blank.gif&quot; data-src=&quot;path/to/image2.jpg&quot; data-retina=&quot;path/to/image2@2x.jpg&quot;/&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;sp-slide&quot;&gt;
+            &lt;img class=&quot;sp-image&quot; src=&quot;path/to/blank.gif&quot; data-src=&quot;path/to/image3.jpg&quot; data-retina=&quot;path/to/image3@2x.jpg&quot;/&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sp-thumbnails&quot;&gt;
+        &lt;img class=&quot;sp-thumbnail&quot; src=&quot;path/to/blank.gif&quot; data-src=&quot;path/to/thumbnail1.jpg&quot; data-retina=&quot;path/to/thumbnail1@2x.jpg&quot;/&gt;
+        &lt;img class=&quot;sp-thumbnail&quot; src=&quot;path/to/blank.gif&quot; data-src=&quot;path/to/thumbnail2.jpg&quot; data-retina=&quot;path/to/thumbnail2@2x.jpg&quot;/&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>As can be seen above, the &#39;Retina&#39; module can work together with the &#39;Lazy Loading&#39; module.</p>
+<hr>
+<h3 id="6-conditional-images">6. Conditional Images</h3>
+<p>This modules allows you to specify different image sources for different screen sizes. So, instead of loading large images (suited for desktop screens) on mobile devices, there will be a set of images that will load for smaller screens.</p>
+<p>For each image you can specify three different sources in addition to the default source.</p>
+<p><em>Example:</em></p>
+<pre><code class="lang-html">&lt;div class=&quot;sp-slide&quot;&gt;
+    &lt;img class=&quot;sp-image&quot; src=&quot;path/to/blank.gif&quot; 
+        data-src=&quot;path/to/image_default.jpg&quot;
+        data-small=&quot;path/to/image_small.jpg&quot;
+        data-medium=&quot;path/to/image_medium.jpg&quot;
+        data-large=&quot;path/to/image_large.jpg&quot;/&gt;
+&lt;/div&gt;
+</code></pre>
+<p>The exact size represented by the <code>data-small</code>, <code>data-medium</code> and <code>data-large</code> attributes is given by the <code>smallSize</code>, <code>mediumSize</code> and <code>largeSize</code> properties. By default these are set to 480, 768 and 1024 pixels.</p>
+<p>So, the image source specified in the <code>data-large</code> attribute will load when the slider&#39;s width is smaller than the value of the <code>largeSize</code> property (which is 1024, by default). The image source specified in the <code>data-medium</code> attribute will load when the slider&#39;s width is smaller than the value of the <code>mediumSize</code> property and the image source specified in the <code>data-small</code> attribute will load when the slider&#39;s width is smaller than the value of the <code>smallSize</code> property. If the slider&#39;s width is above any of these values, the default image source will be loaded.</p>
+<p>If you want to specify separate images for Retina (high PPI) displays, you can use the <code>data-retinasmall</code>, <code>data-retinamedium</code> and <code>data-retinalarge</code> attributes (no space between <code>retina</code> and the screen size).</p>
+<p><em>Example:</em></p>
+<pre><code class="lang-html">&lt;div class=&quot;sp-slide&quot;&gt;
+    &lt;img class=&quot;sp-image&quot; src=&quot;path/to/blank.gif&quot; 
+        data-src=&quot;path/to/image_default.jpg&quot;
+        data-small=&quot;path/to/image_small.jpg&quot;
+        data-medium=&quot;path/to/image_medium.jpg&quot;
+        data-large=&quot;path/to/image_large.jpg&quot;
+        data-retinasmall=&quot;path/to/image_retina_small.jpg&quot;
+        data-retinamedium=&quot;path/to/image_retina_medium.jpg&quot;
+        data-retinalarge=&quot;path/to/image_retina_large.jpg&quot;/&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Customizable properties: <a href="api.md#smallsize">smallSize</a>, <a href="api.md#mediumsize">mediumSize</a> and <a href="api.md#largesize">largeSize</a>.</p>
+<hr>
+<h3 id="7-layers">7. Layers</h3>
+<p>Adds support for layers, which are blocks of text or HTML content that can easily be positioned, sized or animated.</p>
+<p><em>Example:</em></p>
+<pre><code class="lang-html">&lt;div class=&quot;sp-slide&quot;&gt;
+    &lt;img class=&quot;sp-image&quot; src=&quot;path/to/image.jpg&quot;/&gt;
+
+    &lt;h3 class=&quot;sp-layer&quot;&gt;
+        Lorem ipsum dolor sit amet
+    &lt;/h3&gt;
+
+    &lt;p class=&quot;sp-layer&quot;&gt;
+        consectetur adipisicing elit
+    &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>As can be seen above, the layers need to have the <code>sp-layer</code> class, but they can be any HTML element: paragraphs, headings or just DIV elements.</p>
+<p>Here is an example that adds some styling and animation parameters:</p>
+<pre><code class="lang-html">&lt;div class=&quot;sp-slide&quot;&gt;
+    &lt;img class=&quot;sp-image&quot; src=&quot;path/to/image.jpg&quot;/&gt;
+
+    &lt;h3 class=&quot;sp-layer sp-black&quot;
+        data-position=&quot;bottomLeft&quot; data-horizontal=&quot;10%&quot;
+        data-show-transition=&quot;left&quot; data-show-delay=&quot;300&quot; data-hide-transition=&quot;right&quot;&gt;
+        Lorem ipsum dolor sit amet
+    &lt;/h3&gt;
+
+    &lt;p class=&quot;sp-layer sp-white sp-padding&quot;
+        data-width=&quot;200&quot; data-horizontal=&quot;center&quot; data-vertical=&quot;40%&quot;
+        data-show-transition=&quot;down&quot; data-hide-transition=&quot;up&quot;&gt;
+        consectetur adipisicing elit
+    &lt;/p&gt;
+
+    &lt;div class=&quot;sp-layer sp-static&quot;&gt;Static content&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>There are several predefined classes that can be passed to layers in order to style them. The position, size and animations are set using data attributes.</p>
+<p>Predefined classes:</p>
+<h5 id="sp-static">sp-static</h5>
+<blockquote>
+<p>Sets the layer to be visible all the time, not animated.</p>
+</blockquote>
+<h5 id="sp-black">sp-black</h5>
+<blockquote>
+<p>Adds a black and transparent background and makes the font color white.</p>
+</blockquote>
+<h5 id="sp-white">sp-white</h5>
+<blockquote>
+<p>Adds a white and transparent background and makes the font color black.</p>
+</blockquote>
+<h5 id="sp-padding">sp-padding</h5>
+<blockquote>
+<p>Adds a 10 pixel padding to the layer.</p>
+</blockquote>
+<h5 id="sp-rounded">sp-rounded</h5>
+<blockquote>
+<p>Makes the layer&#39;s corners rounded.</p>
+</blockquote>
+<p>Data attributes:</p>
+<h5 id="data-width">data-width</h5>
+<blockquote>
+<p>Sets the width of the layer. Can be set to a fixed or percentage value. If it&#39;s not set, the layer&#39;s width will adapt to the width of the inner content.</p>
+</blockquote>
+<h5 id="data-height">data-height</h5>
+<blockquote>
+<p>Sets the height of the layer. Can be set to a fixed or percentage value. If it&#39;s not set, the layer&#39;s height will adapt to the height of the inner content.</p>
+</blockquote>
+<h5 id="data-depth">data-depth</h5>
+<blockquote>
+<p>Sets the depth (z-index, in CSS terms) of the layer.</p>
+</blockquote>
+<h5 id="data-position">data-position</h5>
+<blockquote>
+<p>Sets the position of the layer. Can be set to &#39;topLeft&#39; (which is the default value), &#39;topCenter&#39;, &#39;topRight&#39;, &#39;bottomLeft&#39;, &#39;bottomCenter&#39;, &#39;bottomRight&#39;, &#39;centerLeft&#39;, &#39;centerRight&#39; and &#39;centerCenter&#39;.</p>
+</blockquote>
+<h5 id="data-horizontal">data-horizontal</h5>
+<blockquote>
+<p>Sets the horizontal position of the layer, using the value specified for data-position as a reference point. Can be set to a fixed or percentage value.</p>
+</blockquote>
+<h5 id="data-vertical">data-vertical</h5>
+<blockquote>
+<p>Sets the vertical position of the layer, using the value specified for data-position as a reference point. Can be set to a fixed or percentage value.</p>
+</blockquote>
+<h5 id="data-show-transition">data-show-transition</h5>
+<blockquote>
+<p>Sets the transition of the layer when it appears in the slide. Can be set to &#39;left&#39;, &#39;right&#39;, &#39;up&#39; or &#39;down&#39;, these values describing the direction in which the layer will move when it appears.</p>
+</blockquote>
+<h5 id="data-show-offset">data-show-offset</h5>
+<blockquote>
+<p>Sets an offset for the position of the layer from which the layer will be animated towards the final position when it appears in the slide. Needs to be set to a fixed value.</p>
+</blockquote>
+<h5 id="data-show-duration">data-show-duration</h5>
+<blockquote>
+<p>Sets the duration of the show transition.</p>
+</blockquote>
+<h5 id="data-show-delay">data-show-delay</h5>
+<blockquote>
+<p>Sets a delay for the show transition. This delay starts from the moment when the transition to the new slide starts.</p>
+</blockquote>
+<h5 id="data-hide-transition">data-hide-transition</h5>
+<blockquote>
+<p>Sets the transition of the layer when it disappears from the slide. Can be set to &#39;left&#39;, &#39;right&#39;, &#39;up&#39; or &#39;down&#39;, these values describing the direction in which the layer will move when it disappears.</p>
+</blockquote>
+<h5 id="data-hide-offset">data-hide-offset</h5>
+<blockquote>
+<p>Sets an offset for the position of the layer towards which the layer will be animated from the original position when it disappears from the slide. Needs to be set to a fixed value.</p>
+</blockquote>
+<h5 id="data-hide-duration">data-hide-duration</h5>
+<blockquote>
+<p>Sets the duration of the hide transition.</p>
+</blockquote>
+<h5 id="data-hide-delay">data-hide-delay</h5>
+<blockquote>
+<p>Sets a delay for the hide transition.</p>
+</blockquote>
+<h5 id="data-stay-duration">data-stay-duration</h5>
+<blockquote>
+<p>Sets how much time a layer will stay visible before being hidden automatically.</p>
+</blockquote>
+<blockquote>
+<p>The layers are animated using CSS3 transitions in most browsers. In IE9 and IE8 (where CSS3 transitions are not supported), the layers will only fade in/out, and in IE7 and older, the layers will appear without any animation.</p>
+</blockquote>
+<p>Customizable properties: <a href="api.md#waitforlayers">waitForLayers</a>, <a href="api.md#autoscalelayers">autoScaleLayers</a> and <a href="api.md#autoscalereference">autoScaleReference</a>.</p>
+<hr>
+<h3 id="8-deep-linking">8. Deep Linking</h3>
+<p>Provides the possibility to link to a specific slide in the slider. You can use this to have the slider opened at a specific slide when the page loads or to navigate to a specific slide at a later time.</p>
+<p>The hash that needs to be appended to the URL consists of the &#39;id&#39; attribute of the slider and the index of the slide separated by a slash character (/). For example, <code>http://domain.com/page#my-slider/0</code> will open the first slide (because slide indexes start with 0) in the slider that has the &#39;id&#39; set to &#39;my-slider&#39;.</p>
+<p>It&#39;s also possible to specify the &#39;id&#39; attribute of the slide instead of its index.</p>
+<p><em>Example:</em></p>
+<pre><code class="lang-html">&lt;div id=&quot;my-slider&quot; class=&quot;slider-pro&quot;&gt;
+    &lt;div class=&quot;sp-slides&quot;&gt;
+        &lt;div class=&quot;sp-slide&quot;&gt;
+            &lt;img class=&quot;sp-image&quot; src=&quot;path/to/image1.jpg&quot;/&gt;
+        &lt;/div&gt;
+
+        &lt;div id=&quot;my-slide&quot; class=&quot;sp-slide&quot;&gt;
+            &lt;img class=&quot;sp-image&quot; src=&quot;path/to/image2.jpg&quot;/&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;sp-slide&quot;&gt;
+            &lt;img class=&quot;sp-image&quot; src=&quot;path/to/image3.jpg&quot;/&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>In order to open the second slide, you can use either <code>http://domain.com/page#my-slider/1</code> or <code>http://domain.com/page#my-slider/my-slide</code>.</p>
+<p>Customizable properties: <a href="api.md#updatehash">updateHash</a>.</p>
+<hr>
+<h3 id="9-autoplay">9. Autoplay</h3>
+<p>Adds autoplay functionality.</p>
+<p>Customizable properties: <a href="api.md#autoplay">autoplay</a>, <a href="api.md#autoplaydelay">autoplayDelay</a>, <a href="api.md#autoplaydirection">autoplayDirection</a> and <a href="api.md#autoplayonhover">autoplayOnHover</a>.</p>
+<hr>
+<h3 id="10-touch-swipe">10. Touch Swipe</h3>
+<p>Adds touch-swipe functionality for the slides. The module also adds mouse drag functionality on non-touch screen devices.</p>
+<p>Customizable properties: <a href="api.md#touchswipe">touchSwipe</a> and <a href="api.md#touchswipethreshold">touchSwipeThreshold</a>.</p>
+<hr>
+<h3 id="11-buttons">11. Buttons</h3>
+<p>Adds navigation buttons below the slider.</p>
+<p>Customizable properties: <a href="api.md#buttons">buttons</a>.</p>
+<hr>
+<h3 id="12-arrows">12. Arrows</h3>
+<p>Adds navigation arrows for the slides.</p>
+<p>Customizable properties: <a href="api.md#arrows">arrows</a> and <a href="api.md#fadearrows">fadeArrows</a>.</p>
+<hr>
+<h3 id="13-keyboard">13. Keyboard</h3>
+<p>Adds keyboard navigation support. The arrow keys will move the slider to the next or previous slide, and the Enter key will open the link attached to the slide&#39;s main image.</p>
+<p>Customizable properties: <a href="api.md#keyboard">keyboard</a> and <a href="api.md#keyboardonlyonfocus">keyboardOnlyOnFocus</a>.</p>
+<hr>
+<h3 id="14-thumbnails">14. Thumbnails</h3>
+<p>This module adds support for thumbnails. Thumbnails can contain any HTML content, from simple images to more complex structures that include both text and images.</p>
+<p>There are two possible variations for adding thumbnails:</p>
+<ul>
+<li>Add them separately from slides, in their own container, <code>sp-thumbnails</code>.</li>
+</ul>
+<p><em>Example:</em></p>
+<pre><code class="lang-html">&lt;div class=&quot;slider-pro&quot;&gt;
+    &lt;div class=&quot;sp-slides&quot;&gt;
+        ...
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sp-thumbnails&quot;&gt;
+        &lt;img class=&quot;sp-thumbnail&quot; src=&quot;path/to/thumbnail.jpg&quot;/&gt;
+
+        &lt;p class=&quot;sp-thumbnail&quot;&gt;Thumbnail 2&lt;/p&gt;
+
+        &lt;div class=&quot;sp-thumbnail&quot;&gt;
+            &lt;img class=&quot;sp-thumbnail-image&quot; src=&quot;path/to/thumbnail.jpg&quot;/&gt;
+            &lt;p class=&quot;sp-thumbnail-text&quot;&gt;Tempor incididunt ut labore et dolore magna&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>Add each thumbnail in the <code>sp-slide</code> element to which it corresponds.</li>
+</ul>
+<p><em>Example:</em></p>
+<pre><code class="lang-html">&lt;div class=&quot;slider-pro&quot;&gt;
+    &lt;div class=&quot;sp-slides&quot;&gt;
+        &lt;div class=&quot;sp-slide&quot;&gt;
+            &lt;img class=&quot;sp-image&quot; src=&quot;path/to/image1.jpg&quot;/&gt;
+
+            &lt;img class=&quot;sp-thumbnail&quot; src=&quot;path/to/thumbnail.jpg&quot;/&gt;
+        &lt;/div&gt;
+
+        &lt;div id=&quot;my-slide&quot; class=&quot;sp-slide&quot;&gt;
+            &lt;img class=&quot;sp-image&quot; src=&quot;path/to/image2.jpg&quot;/&gt;
+
+            &lt;p class=&quot;sp-thumbnail&quot;&gt;Thumbnail 2&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;sp-slide&quot;&gt;
+            &lt;img class=&quot;sp-image&quot; src=&quot;path/to/image3.jpg&quot;/&gt;
+
+            &lt;div class=&quot;sp-thumbnail&quot;&gt;
+                &lt;img class=&quot;sp-thumbnail-image&quot; src=&quot;path/to/thumbnail.jpg&quot;/&gt;
+                &lt;p class=&quot;sp-thumbnail-text&quot;&gt;Tempor incididunt ut labore et dolore magna&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>You can use which variations you think is more semantic for your implementation.</p>
+<p>Customizable properties: <a href="api.md#thumbnailwidth">thumbnailWidth</a>, <a href="api.md#thumbnailheight">thumbnailHeight</a>, <a href="api.md#thumbnailsposition">thumbnailsPosition</a> and <a href="api.md#thumbnailpointer">thumbnailPointer</a>.</p>
+<hr>
+<h3 id="15-thumbnail-touch-swipe">15. Thumbnail Touch Swipe</h3>
+<p>Adds touch swipe functionality for the thumbnails.</p>
+<p>Customizable properties: <a href="api.md#thumbnailtouchswipe">thumbnailTouchSwipe</a>. </p>
+<hr>
+<h3 id="16-thumbnail-arrows">16. Thumbnail Arrows</h3>
+<p>Adds navigation arrows for the thumbnails.</p>
+<p>Customizable properties: <a href="api.md#thumbnailarrows">thumbnailArrows</a> and <a href="api.md#fadethumbnailarrows">fadeThumbnailArrows</a>.</p>
+<hr>
+<h3 id="17-video">17. Video</h3>
+<p>Provides automatic control of the videos loaded inside the slider. For example, the video will pause automatically when another slide is selected, or, if the autoplay is running, it will be paused when a video starts playing.</p>
+<p>The video types or providers supported by this module are: YouTube, Vimeo, HTML5, Video.js, SublimeVideo, and JW Player.</p>
+<p>In order to have a video automatically controlled by the slider, the video must have the <code>sp-video</code> class. Also, there are some provider-specific requirements for the videos, as presented below.</p>
+<p>Customizable properties: <a href="api.md#reachvideoaction">reachVideoAction</a>, <a href="api.md#leavevideoaction">leaveVideoAction</a>, <a href="api.md#playvideoaction">playVideoAction</a>, <a href="api.md#pausevideoaction">pauseVideoAction</a> and <a href="api.md#endvideoaction">endVideoAction</a>.</p>
+<h5 id="notes">Notes</h5>
+<blockquote>
+<ul>
+<li>Most of the videos will work correctly only if the page is on a server. It can be a local server or an online server.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>iOS doesn&#39;t allow videos to play automatically, so an initial user action is required in order to play the video. After the initial action, the videos will be controlled automatically.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>When pausing a YouTube video automatically, on iOS, the video will be stopped instead, because only pausing it makes the entire region that the video occupies unresponsive to user input. For example, if another video slides in over the YouTube video, we won&#39;t be able to play this video because the controls will be unresponsive. However, this doesn&#39;t occur if the YouTube video is stopped instead of paused.</li>
+</ul>
+</blockquote>
+<h5 id="youtube">YouTube</h5>
+<p>YouTube videos can be loaded in two ways: by using a poster image with a link to the YouTube video or by inserting directly the video iframe provided by YouTube.</p>
+<p><em>Example 1:</em></p>
+<pre><code class="lang-html">&lt;a class=&quot;sp-video&quot; href=&quot;//www.youtube.com/watch?v=oaDkph9yQBs&quot;&gt;
+    &lt;img src=&quot;path/to/poster.jpg&quot; width=&quot;500&quot; height=&quot;300&quot;/&gt;
+&lt;/a&gt;
+</code></pre>
+<p>When using the second method, the videos will need to have the <code>enablejsapi=1</code> parameter appended to the URL of the video. It&#39;s also recommended to append the <code>wmode=opaque</code> parameter. The parameters need to be delimited by <code>&amp;amp;</code>.</p>
+<p><em>Example 2:</em></p>
+<pre><code class="lang-html">&lt;iframe class=&quot;sp-video&quot; src=&quot;http://www.youtube.com/embed/msIjWthwWwI?enablejsapi=1&amp;amp;wmode=opaque&quot; width=&quot;500&quot; height=&quot;350&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</code></pre>
+<h5 id="vimeo">Vimeo</h5>
+<p>Just like YouTube videos, Vimeo videos can also be loaded by using a poster image or by inserting directly the video iframe.</p>
+<p><em>Example 1:</em></p>
+<pre><code class="lang-html">&lt;a class=&quot;sp-video&quot; href=&quot;http://vimeo.com/109354891&quot;&gt;
+    &lt;img src=&quot;path/to/poster.jpg&quot; width=&quot;500&quot; height=&quot;300&quot;/&gt;
+&lt;/a&gt;
+</code></pre>
+<p>When using the second method, the videos will need to have the <code>api=1</code> parameter appended to the URL of the video.</p>
+<p><em>Example 2:</em></p>
+<pre><code class="lang-html">&lt;iframe class=&quot;sp-video&quot; src=&quot;http://player.vimeo.com/video/109354891?api=1&quot; width=&quot;500&quot; height=&quot;300&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+</code></pre>
+<h5 id="html5">HTML5</h5>
+<p>Simple HTML5 videos don&#39;t need any preparations other than having the <code>sp-video</code> class.</p>
+<p><em>Example:</em></p>
+<pre><code class="lang-html">&lt;video class=&quot;sp-video&quot; poster=&quot;path/to/poster.jpg&quot; width=&quot;500&quot; height=&quot;350&quot; controls=&quot;controls&quot; preload=&quot;none&quot;&gt;
+    &lt;source src=&quot;path/to/video.mp4&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;source src=&quot;path/to/video.ogv&quot; type=&quot;video/ogg&quot;/&gt;
+&lt;/video&gt;
+</code></pre>
+<h5 id="video-js">Video.js</h5>
+<p>Each Video.js video must have a unique &#39;id&#39; attribute. Also, because the Video.js library changes the HTML markup of the video, we&#39;ll create a container element and add the <code>sp-video</code> class to that element instead. Also, the container element must have the <code>data-video-id</code> attribute, which is used to specify the &#39;id&#39; attribute of the video.</p>
+<p><em>Example:</em></p>
+<pre><code class="lang-html">&lt;div class=&quot;sp-video&quot; data-videojs-id=&quot;video1&quot;&gt;
+    &lt;video id=&quot;video1&quot; class=&quot;video-js vjs-default-skin&quot; poster=&quot;path/to/poster.jpg&quot; width=&quot;500&quot; height=&quot;350&quot; controls=&quot;controls&quot; preload=&quot;none&quot; data-setup=&quot;{}&quot;&gt;
+        &lt;source src=&quot;path/to/video.mp4&quot; type=&quot;video/mp4&quot;/&gt;
+        &lt;source src=&quot;path/to/video.ogv&quot; type=&quot;video/ogg&quot;/&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Please note that, in order to use Video.js, you need to load the Video.js JavaScript and CSS files in your page. More information about how to use Video.js, in general, can be found on the <a href="http://www.videojs.com/">official Video.js page</a>. </p>
+<h5 id="sublimevideo">SublimeVideo</h5>
+<p>Each SublimeVideo instance must have a unique &#39;id&#39; attribute.</p>
+<p><em>Example:</em></p>
+<pre><code class="lang-html">&lt;video id=&quot;video2&quot; class=&quot;sp-video sublime&quot; poster=&quot;path/to/poster.jpg&quot; width=&quot;500&quot; height=&quot;350&quot; controls=&quot;controls&quot; preload=&quot;none&quot;&gt;
+    &lt;source src=&quot;path/to/video.mp4&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;source src=&quot;path/to/video.ogv&quot; type=&quot;video/ogg&quot;/&gt;
+&lt;/video&gt;
+</code></pre>
+<p>Please note that, in order to use SublimeVideo, you will also need to load a script in your page which you need to download from the SublimeVideo page. More information about how to use SublimeVideo, in general, can be found on the <a href="http://www.sublimevideo.net/">official SublimeVideo page</a>.</p>
+<h3 id="jw-player">JW Player</h3>
+<p>Just like Video.js, JW Player videos modify the HTML markup and we need to use a container element to facilitate the integration with the Video Controller plugin. The container will have the <code>data-jwplayer-id</code> attribute which will indicate the <code>id</code> attribute of the video element.</p>
+<pre><code class="lang-html">&lt;div id=&quot;video-container&quot; data-jwplayer-id=&quot;my-video&quot;&gt;
+    &lt;div id=&quot;my-video&quot;&gt;Loading the video...&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="lang-javascript">$(document).ready(function() {
+    jwplayer(&quot;my-video&quot;).setup({
+        file: &quot;http://bqworks.com/products/assets/videos/bbb/bbb-trailer.mp4&quot;,
+        image: &quot;http://bqworks.com/products/assets/videos/bbb/bbb-poster.jpg&quot;,
+        width: 500,
+        height: 350
+    });
+
+
+    $(&#39;#video-container&#39;).videoController();
+});
+</code></pre>
+<p>It&#39;s also possible to not use a container element, but in that case the plugin needs to be instantiated after the video was set up.</p>
+<pre><code class="lang-html">&lt;div id=&quot;my-video&quot;&gt;Loading the video...&lt;/div&gt;
+</code></pre>
+<pre><code class="lang-javascript">var video;
+
+$(document).ready(function() {
+    jwplayer(&quot;my-video&quot;).setup({
+        file: &quot;http://bqworks.com/products/assets/videos/bbb/bbb-trailer.mp4&quot;,
+        image: &quot;http://bqworks.com/products/assets/videos/bbb/bbb-poster.jpg&quot;,
+        width: 500,
+        height: 350,
+        events: {
+            onReady: function() {
+                // if the flash player is used, the set ID will be attributed to an object element. 
+                // However, we can&#39;t instantiate the plugin on an object element, 
+                // so we instantiate it on the object&#39;s wrapper instead
+                video = $(&#39;#my-video&#39;).is(&#39;object&#39;) ? $(&#39;#my-video&#39;).parent() : $(&#39;#my-video&#39;);
+                video.videoController();
+            }
+        }
+    });
+});
+</code></pre>
+
+      </body>
+    </html>

@@ -1,0 +1,321 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no,minimum-scale=1,maximum-scale=1">
+<title></title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="slider-pro.min.css"/>
+<link rel="stylesheet" href="lightbox.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="jquery.sliderPro.min.js"></script>
+<script src="lightbox.js" type="text/javascript"></script>
+<script>
+	$( document ).ready(function( $ ) {
+
+		// ページ内ジャンプ設定ここから
+		$(".click-s").click(function(){
+			var targetTop = $("#contents-container").offset().top;
+			$('html,body').animate({
+				scrollTop: targetTop
+			}, 500);
+		});
+		$(".click-a").click(function(){
+			var targetTop = $("#catalog-title").offset().top;
+			$('html,body').animate({
+				scrollTop: targetTop
+			}, 500);
+		});
+		$(".click-b").click(function(){
+			var targetTop = $("#price-title").offset().top;
+			$('html,body').animate({
+				scrollTop: targetTop
+			}, 500);
+		});
+		$(".click-c").click(function(){
+			var targetTop = $("#news-title").offset().top;
+			$('html,body').animate({
+				scrollTop: targetTop
+			}, 500);
+		});
+		$("#footer-logo img").click(function(){
+			var targetTop = $("html,body").offset().top;
+			$('html,body').animate({
+				scrollTop: targetTop
+			}, 500);
+		});
+		// ページ内ジャンプ設定ここまで
+
+
+  $( '#slider3' ).sliderPro({
+    width: '100%',//横幅
+    arrows: false,//左右の矢印を出す
+    buttons: false,//ナビゲーションボタンを出す
+    aspectRatio: 1.5,//スライドのアスペクト比
+    forceSize: 'fullWindow',//ウィンドウ内全画面表示
+    slideDistance:0,//スライド同士の距離
+  });
+
+    $( '#catalog' ).sliderPro({
+    width: '18%',//横幅
+    visibleSize: 'all',//左右を見せる
+    arrows: true,//左右の矢印を出す
+    buttons: false,//ナビゲーションボタンを出す
+    aspectRatio: 0.75,//スライドのアスペクト比
+    forceSize: 'fullWidth',//ウィンドウ内全画面表示
+    slideDistance:0,//スライド同士の距離
+  });
+
+		// トップへのボタン設定ここから
+		var pagetop = $('#page-top');   
+		pagetop.hide();
+		$(window).scroll(function () {
+		if ($(this).scrollTop() > 80) {
+			pagetop.fadeIn(400);
+		} else {
+			pagetop.fadeOut(400);
+		}
+		});
+
+		$("#page-top").click(function(){
+			var targetTop = $("html,body").offset().top;
+			$('html,body').animate({
+				scrollTop: targetTop
+			}, 500);
+		});
+		// トップへのボタン設定ここまで
+
+
+  		$('#hamburger-menu').click(function(){
+		$('#hamburger-menu').toggleClass('active');
+		$('#hamburger-menu span').toggleClass('active');
+		$('nav').stop(true).animate({
+			width:'toggle'
+		},200);
+		});
+});
+</script>
+</head>
+
+<body>
+	<header>
+		<!-- ナビここから -->
+			<div id="hamburger-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li class="click-s">
+						<p>infomation<span>インフォメーション</span></p>
+					</li>
+					<li class="click-a">
+						<p>hair catalog<span>ヘアカタログ</span></p>
+					</li>
+					<li class="click-b">
+						<p>price<span>料金表</span></p>
+					</li>
+					<li class="click-c">
+						<p>news<span>新着情報</span></p>
+					</li>
+					<li>
+						<a href="tel:">
+						<p>TEL:<br>0000-00-0000</p>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<div id="page-top">
+				<img src="image/scissors.png" alt="ページトップへ">
+				<span>BACK TO TOP</span>
+			</div>
+			<!-- ナビここまで -->
+		<div id="logo">
+			<img src="image/logo_01.png">
+		</div>
+
+		<div id="slider3" class="slider-pro">
+			<div class="sp-slides">
+				<div class="sp-slide">
+					<img class="sp-image" src="image/main_02.jpg" />
+				</div>
+				<div class="sp-slide">
+					<img class="sp-image" src="image/main_01.jpg" />
+				</div>
+				<div class="sp-slide">
+					<img class="sp-image" src="image/main_03.jpg" />
+				</div>
+				<div class="sp-slide">
+					<img class="sp-image" src="image/main_04.jpg" />
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="body-wrapper">
+		<div id="contents-container">
+			<div id="contents-a">
+				<p><a href="image/date_02.jpg" rel="lightbox"><img class="imgsize" src="image/date_01.png" alt="営業時間・定休日について" width="320" /></a></p>
+			</div>
+			<div id="contents-b">
+				<p><a href="image/call_02.jpg" rel="lightbox"><img class="imgsize" src="image/tel.png" alt="連絡先電話番号" width="320" /></a></p>
+			</div>
+			<div id="contents-c">
+				<p><a href="image/map_01.jpg" rel="lightbox"><img class="imgsize" src="image/map_01.jpg" alt="当店へのアクセスマップ" width="320" /></a></p>
+			</div>
+		</div>
+		<div id="catalog-title"><h2>hair catalog<span>ヘアカタログ</span></h2></div>
+		<div id="catalog">
+			<div class="sp-slides">
+				<div class="sp-slide">
+					<img class="sp-image" src="image/hair_01.jpg" />
+				</div>
+				<div class="sp-slide">
+					<img class="sp-image" src="image/hair_02.jpg" />
+				</div>
+				<div class="sp-slide">
+					<img class="sp-image" src="image/hair_03.jpg" />
+				</div>
+				<div class="sp-slide">
+					<img class="sp-image" src="image/hair_04.jpg" />
+				</div>
+				<div class="sp-slide">
+					<img class="sp-image" src="image/hair_05.jpg" />
+				</div>
+				<div class="sp-slide">
+					<img class="sp-image" src="image/hair_06.jpg" />
+				</div>
+				<div class="sp-slide">
+					<img class="sp-image" src="image/hair_07.jpg" />
+				</div>
+			</div>
+		</div>
+
+		<div id="price-title"><h2>price<span>料金表</span></h2></div>
+		<div id="price">
+			<dl>
+				<dt>
+					<ul>
+						<li><span class="marker-ylw">カットA</span></li>
+						<li><span class="marker-red">カットB</span></li>
+						<li><span class="marker-blue">カットC</span></li>
+					</ul>
+				</dt>
+				<dd>
+					<ul>
+						<li><span class="marker-ylw">2,640円</span></li>
+						<li><span class="marker-red">2,640円</span></li>
+						<li><span class="marker-blue">2,640円</span></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt>
+					<ul>
+						<li><span class="marker-ylw">ヘアカラー</span></li>
+						<li><span class="marker-red">パーマ</span></li>
+					</ul>
+				</dt>
+				<dd>
+					<ul>
+						<li><span class="marker-ylw">2,900円</span></li>
+						<li><span class="marker-red">3,400円</span></li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		
+		<div id="news-title"><h2>news<span>新着情報</span></h2></div>
+		<div id="news">
+			<div id="news-container">
+				<dl>
+					<dt>
+						<img src="image/news_01.jpg">
+					</dt>
+					<dd>
+						<ul>
+							<li>架空、タイトル部分、交流会！</li>
+							<li>架空、説明部分、何々の交流会に参加してきました。</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<img src="image/news_01.jpg">
+					</dt>
+					<dd>
+						<ul>
+							<li>架空、タイトル部分、交流会！</li>
+							<li>架空、説明部分、何々の交流会に参加してきました。何々の何々が何々でこうこうこういう事がありました。</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<img src="image/news_01.jpg">
+					</dt>
+					<dd>
+						<ul>
+							<li>架空、タイトル部分、交流会！</li>
+							<li>架空、説明部分、何々の交流会に参加してきました。何々の何々が何々でこうこうこういう事がありました。</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<img src="image/news_01.jpg">
+					</dt>
+					<dd>
+						<ul>
+							<li>架空、タイトル部分、交流会！</li>
+							<li>架空、説明部分、何々の交流会に参加してきました。何々の何々が何々でこうこうこういう事がありました。</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<img src="image/news_01.jpg">
+					</dt>
+					<dd>
+						<ul>
+							<li>架空、タイトル部分、交流会！</li>
+							<li>架空、説明部分、何々の交流会に参加してきました。何々の何々が何々でこうこうこういう事がありました。</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<img src="image/news_01.jpg">
+					</dt>
+					<dd>
+						<ul>
+							<li>架空、タイトル部分、交流会！</li>
+							<li>架空、説明部分、何々の交流会に参加してきました。何々の何々が何々でこうこうこういう事がありました。</li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div id="about-us">
+			<div id="sns">
+				<a href="" target="_blank">
+				<img src="image/twitter.png" alt="twitterロゴ">
+				</a>
+				<a href="" target="_blank">
+				<img src="image/instagram.png" alt="instagramロゴ">
+				</a>
+				<a href="" target="_blank">
+				<img src="image/facebook.png" alt="facebookロゴ">
+				</a>
+			</div>
+			<div id="footer-logo">
+				<img class="imgsize" src="image/logo_01.png">
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no,minimum-scale=1,maximum-scale=1">
+<title>内科・消化器科 鍋島クリニック</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,700,900|M+PLUS+1p" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script>
+	$(window).on('load resize', function(){
+    var nav = $('#head-nav');
+	var w = $(window).width();
+    var x = 980;
+    // メニューのtop座標を取得する
+    var offsetTop = nav.offset().top;
+
+    var floatMenu = function() {
+        // スクロール位置がメニューのtop座標を超えたら固定にする
+        if ($(window).scrollTop() > offsetTop&&w >= x) {
+            nav.addClass('fixed');
+        } else {
+            nav.removeClass('fixed');
+        }
+    }
+	    $(window).scroll(floatMenu);
+	    $('body').bind('touchmove', floatMenu);
+	});
+
+// ナビのレスポンシブ可
+$(function(){
+$('#button').click(function(){
+$('#button').toggleClass('active');
+$('nav').slideToggle('open');
+});
+});
+
+</script>
+</head>
+
+<body>
+	<div id="button">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<header>
+			<div id="head-top" class="cf">
+				<div id="img-container">
+					<a href="index.html">
+					<img src="images/logo_01.png" alt="内科・消化器科　鍋島クリニック">
+					</a>
+				</div>	
+				<div id="head-right-container" class="cf">
+					<div class="table-container">
+						<table>
+							<tr class="tr-first">
+								<th>診療時間</th>
+								<th>月</th>
+								<th>火</th>
+								<th>水</th>
+								<th>木</th>
+								<th>金</th>
+								<th>土</th>
+								<th>日</th>
+							</tr>
+							<tr class="tr-other">
+								<th>午前 8:30～12:00</th>
+								<td>●</td>
+								<td class="attention">※</td>
+								<td>●</td>
+								<td>●</td>
+								<td>●</td>
+								<td class="saturday">●</td>
+								<td class="sunday">／</td>
+							</tr>
+							<tr class="tr-other">
+								<th>午後 14:30～17:00</th>
+								<td>●</td>
+								<td>●</td>
+								<td>●</td>
+								<td>／</td>
+								<td>●</td>
+								<td class="saturday">／</td>
+								<td class="sunday">／</td>
+							</tr>
+						</table>
+					</div>
+					<div id="head-right"><span class="tuesday attention">※火曜日午前は訪問診療の為、<br>診療は午後のみとなります。</span><span>お電話受付時間: 8:30～17:00</span>
+						<i class="material-icons">call</i>0000-00-0000
+					</div>
+				</div>
+			</div>
+			<div id="head-nav">
+				<nav class="open">
+					<ul>
+						<li><a href="index.html"><i class="fas fa-hospital"></i><span>HOME</span></a></li>
+						<li><a href=""><i class="fas fa-id-badge"></i><span>ご来院の方へ</span></a></li>
+						<li><a href=""><i class="fas fa-laptop-medical"></i><span>当院のご案内</span></a></li>
+						<li><a href=""><i class="fas fa-comment-medical"></i><span>院長あいさつ</span></a></li>
+						<li><a href=""><i class="fas fa-user-nurse"></i><span>医療関係者の方へ</span></a></li>
+					</ul>
+				</nav>
+			</div>
+	</header>
+	<div id="body-wrapper">
+		<div id="main-image">
+			<ul>
+				<li><img src="images/image_02.jpg" alt=""></li>
+			</ul>
+		</div>
+		<div id="contents-bg">
+			<div id="contents" class="cf">
+				<div id="contents-left-news">
+					<h2>クリニックからのお知らせ</h2>
+					<ul>
+						<li>2019.02.04<span class="event">イベント</span><a href="#">「家庭医学セミナー」の開催について</a></li>
+						<li>2019.02.04<span class="news">お知らせ</span><a href="#">診療時間変更のお知らせ</a></li>
+						<li>2019.01.30<span class="news">お知らせ</span><a href="#">インフルエンザの予防接種を終了しました。</a></li>
+						<li>2019.01.26<span class="news">お知らせ</span><a href="#">当院での忘れ物・落とし物のご案内</a></li>
+						<li>2019.01.26<span class="recruit">採用情報</span><a href="#">職員募集(事務職)を掲載しました。</a></li>
+						<li>2018.11.26<span class="news">お知らせ</span><a href="#">お正月休みのお知らせ</a></li>
+						<li>2018.10.30<span class="news">お知らせ</span><a href="#">インフルエンザ流行期・予防接種について</a></li>
+					</ul>
+				</div>
+				<div id="contents-right-menu" class="cf">
+					<div id="right-menu-a" class="right-menu">
+						<a href="">
+						<i class="fas fa-info-circle"></i>初めて受診される方へ
+						</a>
+					</div>
+					<div class="right-menu">
+						<a href="">
+						<i class="fa fa-question-circle"></i>内科・消化器科Q&A
+						</a>
+					</div>
+					<div class="right-menu">
+						<a href="">
+						<i class="fas fa-user-nurse"></i>職員募集について
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="about">
+			<div id="about-wrapper" class="cf">
+				<div id="about-container">
+					<h2><a href="">ご来院の方へ<i class="material-icons">play_circle_filled</i></a></h2>
+					<dl class="cf">
+						<dt><a href="">
+							<img src="images/photo_02.jpg">
+							<p>院長あいさつ<i class="material-icons">play_circle_filled</i></p>
+							</a>
+						</dt>
+						<dd>
+							<ul>
+								<li>当院は地域の人々の健康を守るために、人と人との絆を大事にした医療を心掛けており、訪問診療や在宅医療のセミナー等にも重点を置いております。</li>
+								<li>地域社会を構成するのは、そこに暮らす人々であり家族であり、より理想的な地域医療を実現するには、地域の方々の連携が不可欠となります。</li>
+								<li><strong>ご自身の体への違和感、ご家族・ご友人の方への違和感等、些細な事でもお気軽にご相談下さい。</strong></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div id="about-time">
+						<dl>
+							<dt><h2>診療受付</h2></dt>
+							<dd>
+								<p class="table-color"><strong>※受診のご予約は不要ですが、ご予約のある方が優先</strong>となる為、<br>ご予約のない方は待ち時間が長くなる可能性がございます。</p>
+								<p class="table-color"><strong>※火曜日午前は訪問診療の為、診療は午後のみ</strong>となります。</p>
+								<p class="about-time-font">お電話受付時間: 8:30～17:00</p>
+								<p class="about-time-font"><i class="material-icons">call</i>0000-00-0000</p>
+							</dd>
+							<dd></dd>
+							<dd>
+									<table>
+										<tr class="tr-first">
+											<th>診療時間</th>
+											<th>月</th>
+											<th>火</th>
+											<th>水</th>
+											<th>木</th>
+											<th>金</th>
+											<th>土</th>
+											<th>日</th>
+										</tr>
+										<tr class="tr-other">
+											<th>午前 8:30～12:00</th>
+											<td>●</td>
+											<td class="table-color">※</td>
+											<td>●</td>
+											<td>●</td>
+											<td>●</td>
+											<td class="saturday">●</td>
+											<td class="sunday">／</td>
+										</tr>
+										<tr class="tr-other">
+											<th>午後 14:30～17:00</th>
+											<td>●</td>
+											<td>●</td>
+											<td>●</td>
+											<td>／</td>
+											<td>●</td>
+											<td class="saturday">／</td>
+											<td class="sunday">／</td>
+										</tr>
+									</table>
+							</dd>
+						</dl>
+					</div>
+				</div>
+		</div>
+			
+
+		<div id="guide">
+			<h3 class="guide-border"><span></span>TOPICS<span></span></h3>
+			<ul>
+				<li>
+					<a href="#">
+						<img src="images/topics_02.jpg">
+						<p>家庭医学のススメ</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/topics_01.jpg">
+						<p>訪問診療について</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<footer>
+		<div id="foot-wrapper">
+			<ul>
+				<li><h2>SITE MAP</h2></li>
+				<li><a href="#"><i class="fas fa-angle-right"></i>ページトップ</a></li>
+				<li><a href="#"><i class="fas fa-angle-right"></i>ご来院の方へ</a></li>
+				<li><a href="#"><i class="fas fa-angle-right"></i>当院のご案内</a></li>
+				<li><a href="#"><i class="fas fa-angle-right"></i>院長あいさつ</a></li>
+				<li><a href="#"><i class="fas fa-angle-right"></i>医療関係者の方へ</a></li>
+				<li><a href="#"><i class="fas fa-angle-right"></i>クリニックからのお知らせ</a></li>
+			</ul>
+			<ul id="right-ul">
+				<li><a href="#"><i class="fas fa-angle-right"></i>初めて受診される方へ</a></li>
+				<li><a href="#"><i class="fas fa-angle-right"></i>内科・消化器科Q&A</a></li>
+				<li><a href="#"><i class="fas fa-angle-right"></i>職員募集について</a></li>
+				<li><a href="#"><i class="fas fa-angle-right"></i>家庭医学のススメ</a></li>
+				<li><a href="#"><i class="fas fa-angle-right"></i>訪問診療について</a></li>
+			</ul>
+
+			<div id="access">
+				<h2>当院までのアクセス</h2>
+				<p>〒000-0000</p>
+				<p>山口県宇部市xxx区xxxx番地xx</p>
+				<p>内科・消化器科 鍋島クリニック</p>
+				<p>TEL:0000-00-0000</p>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3309.657149867345!2d131.2813088982343!3d33.94994519213447!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf418e466d6e07ace!2z44Oa44Oq44Kr44Oz5bO2!5e0!3m2!1sja!2sjp!4v1549350025346" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+			<a href="index.html"><img src="images/logo_01.png"></a>
+		</div>
+		<div id="copyright">
+				Copyright © NABESHIMA CLINIC., All Right Reserved.
+		</div>			
+	</footer>
+</body>
+</html>

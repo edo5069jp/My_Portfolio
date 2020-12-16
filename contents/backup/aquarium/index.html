@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no,minimum-scale=1,maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css;" />
+<meta http-equiv="Content-Style-Type" content="text/javascript;" />
+<title>山口県鍋島水族館</title>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="slider/slider-pro.min.css" media="screen" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<script type="text/javascript" src="js/jquery.arctext.js"></script>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="slider/jquery.sliderPro.min.js"></script>
+<script>
+	$(function() {
+    var nav = $('#head-nav');
+    var offsetTop = nav.offset().top;
+    var floatMenu = function() {
+        
+        if ($(window).scrollTop() > offsetTop) {
+            nav.addClass('fixed');
+        } else {
+            nav.removeClass('fixed');
+        }
+    }
+    $(window).scroll(floatMenu);
+    $('body').bind('touchmove', floatMenu);
+	});
+
+	$(document).ready(function(){
+	  $('#wide').sliderPro({
+	    width: 400,//横幅
+	    autoplayDelay: 7000,//切り替わるまでの時間
+	    slideAnimationDuration: 1000,//アニメーション速度
+		buttons: false,//ナビゲーションボタン
+		imageScaleMode: 'contain',
+	    arrows: true,//左右の矢印
+	    slideDistance:0,//スライド同士の距離
+    	thumbnailWidth: 97,//サムネイルの横幅
+    	thumbnailHeight: 72.75,//サムネイルの縦幅      
+	  });
+	});
+
+
+$(function(){
+$(".scroll-top").click(function() {
+var speed = 400;//アニメーション速度
+var target = $(".scroll-top");
+var position = target.offset().top;
+$('body,html').animate({scrollTop:position}, speed, 'swing');
+});
+});
+
+$(function(){
+$('#button').click(function(){
+$('#button').toggleClass('active');
+$('nav').toggleClass('open');
+});
+});
+
+$(function(){
+$('#arch').arctext({radius: 250});
+});
+
+
+</script>
+</head>
+
+<body>
+	<div id="button">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<header>
+		<div id="head-wrapper">
+			<div id="head-top" class="cf">
+				<div id="head-top-left">
+					<a href="index.html"><img src="images/logo_01_small.png" alt="鍋島水族館"></a>
+				</div>
+				<div id="head-top-right">
+					<ul>
+						<li class="info"><i class="material-icons">alarm</i>営業時間 9:00 ～ 17:00</li>
+						<li class="info"><i class="material-icons">date_range</i>休館日 毎月第２木曜日<br><span>※施設整備・点検のため臨時休館日があります。</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="head-nav">
+			<nav class="open">
+				<ul>
+					<li><a href="#">HOME<br><span>Home</span></a></li>
+					<li><a href="#">営業案内<br><span>Infomation</span></a></li>
+					<li><a href="#">アクセス<br><span>Access</span></a></li>
+					<li><a href="#">フロア案内<br><span>Floor Guide</span></a></li>
+					<li><a href="#">イベント<br><span>Event</span></a></li>
+					<li><a href="#">お知らせ<br><span>News</span></a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div id="main-img">
+		<h2><img src="images/photo_01_sub.png" alt="幻想的な海中プラネタリウム"></h2>
+		<p>多種多様な海の生物たちが適した環境で自由に泳ぎ回る姿は美しいの一言です。<br />手の届きそうな距離で繰り広げられる幻想的な光景をお楽しみください。</p>
+		<a href="#" class="scroll-top"><span></span>Scroll<span class="scroll-bottom"></span></a>
+		
+	</div>	
+
+	<div id="body-wrapper" class="cf">
+		<div id="body-container">
+
+			<div id="body-left-nav">
+				<h2 class="title-border leftnav-title"><span>営業案内<br><span class="span-bottom leftnav-title">Infomation</span></span></h2>
+				<ul>
+					<li class="info"><i class="material-icons">alarm</i>営業時間 9:00 ～ 17:00</li>
+					<li class="info"><i class="material-icons">date_range</i>休館日 毎月第２木曜日<br><span>※施設整備・点検のため臨時休館日があります。</span></li>
+					
+					<li class="info"><a href="#"><i class="material-icons">money</i>料金について</a></li>
+					<li class="info"><a href="#"><i class="material-icons">map</i>各フロア案内</a></li>
+					<li class="info"><a href="#"><i class="material-icons">commute</i>当館までのアクセス</a></li>
+				</ul>
+			</div>
+
+			<div id="body-right-event">
+				<h2 class="title-border"><span>イベント<br><span class="span-bottom">Event</span></span></h2>
+				<div id="wide" class="slider-pro">
+				  <div class="sp-slides">
+				    <div class="sp-slide">
+				      <a href="#"><img class="sp-image" src="images/star.jpg" /></a>
+				    </div>
+				    <div class="sp-slide">
+				      <a href="#"><img class="sp-image" src="images/pengin_03.jpg" /></a>
+				    </div>
+				    <div class="sp-slide">
+				      <a href="#"><img class="sp-image" src="images/majichan_02.jpg" /></a>
+				    </div>
+				    <div class="sp-slide">
+				      <a href="#"><img class="sp-image" src="images/4th.jpg" /></a>
+				    </div>
+				  </div>
+					<div class="sp-thumbnails">
+						<img class="sp-thumbnail" src="images/star.jpg"/>
+						<img class="sp-thumbnail" src="images/pengin_03.jpg"/>
+						<img class="sp-thumbnail" src="images/majichan_02.jpg"/>
+						<img class="sp-thumbnail" src="images/4th.jpg"/>
+					  </div>
+				</div>
+			</div>
+
+			<div id="body-right-news">
+				
+				<h2 class="title-border"><span>お知らせ<br><span class="span-bottom">News</span></span></h2>
+				
+				<div class="btm-menu-list">
+					<ul>
+						<li><a href="#"><span class="btm-news">ニュース</span>
+						<span class="day">2019.01.30</span>
+						ホオジロザメの元気な子供が生まれました。</a></li>
+						<li><a href="#"><span class="btm-event">イベント</span>
+						<span class="day">2019.01.28</span>
+						2月限定「ナイトペンギンツアー」開催決定！</a></li>
+						<li><a href="#"><span class="btm-recruit">採 用</span>
+						<span class="day">2019.01.29</span>
+						今年度の募集は終了いたしました。</a></li>
+						<li><a href="#"><span class="btm-media">メディア</span>
+						<span class="day">2019.01.27</span>
+						アザラシのマジちゃん、架空テレビ出演予定です！</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div id="foot-wrapper" class="cf">
+			<div id="foot-left">
+				<ul>
+					<li>
+					<a href="index.html"><img src="images/logo_01_small.png" alt="鍋島水族館"></a>
+					</li>
+				</ul>
+			</div>
+			<div id="foot-center">
+				<h3 id="arch">最新情報をSNSでお届け！</h3>
+				<a href="#" target="_blank">
+				<i class="fab fa-instagram"></i></a>
+				<a href="#" target="_blank">
+				<i class="fab fa-twitter"></i></a>
+				<a href="#" target="_blank">
+				<i class="fab fa-facebook-square"></i></a>
+			</div>
+			<div id="foot-right">
+				<ul>
+					<li>〒XXX-XXXX</li>
+					<li>山口県宇部市XXXXX XXX-XXX</li>
+					<li>電話: XXXX(XX)XXXX</li>
+					<li>お問い合わせフォーム</li>
+				</ul>
+			</div>
+		</div>
+		<div id="copyright">Copyright © 2019 Nabeshima Aquarium. All Right Reserved.</div>
+	</footer>
+</body>
+</html>

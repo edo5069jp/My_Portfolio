@@ -1,0 +1,3525 @@
+@charset "UTF-8";
+
+/* =========================================================================
+
+	PC Styling
+
+============================================================================ */
+/* --------------------------------------------------------------------- */
+/* トップ (./) */
+/* --------------------------------------------------------------------- */
+
+/* banner */
+#HEADER.top .banner {
+	position: absolute;
+	z-index: 9900;
+	bottom: 55px;
+	left: 72px;
+}
+@media screen and (max-width: 1020px) {
+	#HEADER.top .banner {display: none;}
+}
+
+@media screen and (max-width: 750px) {
+	#HEADER.top .banner {display: none;}
+}
+
+#HEADER.top {height: 100%;}
+#HEADER.top #globalNav {z-index: 9999;}
+#HEADER.top .copybox {
+	position: absolute;
+	top: 135px;
+	right: 13.9vw;
+	z-index: 9000;
+}
+#HEADER.top .copybox .mainCopy img {
+	max-width: 220px;
+	height: auto;
+}
+#HEADER.top .copybox .sub {
+	position: absolute;
+	top:0;
+	right: 246px;
+}
+#HEADER.top .copybox .sub img {
+	max-width: 68px;
+	position: relative;
+}
+#HEADER.top .copybox h2 {position: relative;}
+#HEADER.top .scrollTo a {
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	right: 0;
+	width: 140px;
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	z-index: 9000;
+	font-size: 1.2rem;
+	padding: 15px;
+	border-radius: 2px;
+	text-decoration: none;
+	color: #333;
+	border: 1px solid #ff6e00;
+	background: rgba(250,110,0,0.7);
+}
+#HEADER.top .scrollTo a:hover {
+	color: rgba(250,110,0,0.7);
+	border: 1px solid rgba(250,110,0,0.4);
+	background: rgba(250,250,250,0.7);
+}
+
+/* halfBlock */
+.halfBlock {display: block;}
+.halfBlock ul {
+	list-style: none;
+	display: block;
+	border-bottom: 1px solid #d8d8d7;
+}
+.halfBlock ul li a {
+	width: 100%;
+	display: block;
+}
+.halfBlock ul li a div.txtBlock,
+.halfBlock ul li a figure {
+	width: 50%;
+	height: 350px;
+}
+.halfBlock ul li a div.txtBlock,
+.halfBlock ul li:nth-child(2n) a figure {float: left;}
+.halfBlock ul li a figure,
+.halfBlock ul li:nth-child(2n) a div.txtBlock {	float: right;}
+.halfBlock ul li a div.txtBlock {
+	display: table;
+	text-align: center;
+	background: url(../img/half_bg.png) repeat left top;
+}
+.halfBlock ul li a div.txtBlock div {
+	display: table-cell;
+	vertical-align: middle;
+}
+.halfBlock ul li a div.txtBlock div h2 {
+	font-size: 3.6rem;
+	margin-bottom: 18px;
+}
+.halfBlock ul li a div.txtBlock div .txt {
+	font-size: 1.4rem;
+	line-height: 1.714;
+	margin-bottom: 20px;
+}
+.halfBlock ul li a div.txtBlock div .more {
+	width: 198px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 18px 0;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.3rem;
+	line-height: 1;
+	background: #9b2020;
+	display: block;
+	position: relative;
+	border-radius: 2px;
+}
+.halfBlock ul li a div.txtBlock div .more::after {
+	content: "";
+	width: 20px;
+	height: 7px;
+	background: url(../img/icon_link_01.png) no-repeat left top;
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	margin-top: -4px;
+	display: block;
+}
+.halfBlock ul li a:hover div.txtBlock div .more {background: #891c1c;}
+.halfBlock ul li a:hover div.txtBlock div .more::after {right: 10px;}
+.halfBlock ul li a figure {
+	pointer-events: none;
+	-webkit-filter: grayscale(80%);
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+	filter: grayscale(80%);
+}
+.halfBlock ul li a:hover figure {
+	-webkit-filter: grayscale(0%);
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+	filter: grayscale(0%);
+}
+.halfBlock ul li.l1 figure {background: url(../img/half_01.jpg) no-repeat center center / cover;}
+.halfBlock ul li.l2 figure {background: url(../img/half_02.jpg) no-repeat center center / cover;}
+.halfBlock ul li.l11 figure {background: url(../img/half_11.jpg) no-repeat center center / cover;}
+.l11 a ,.l11 p ,.l12 a ,.l12 p{color: #FFF;}
+.halfBlock ul li.l12 figure {background: url(../img/half_12.jpg) no-repeat center center / cover;}
+
+
+/* 3links */
+.linkBlock {
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e2e2e2;
+	padding: 60px 60px;
+}
+.linkBlockBody {
+	max-width: 1020px;
+	width: 100%;
+	margin: 0 auto;
+}
+.linkBlock ul {
+	width: 100%;
+	list-style: none;
+	display: block;
+}
+.linkBlock ul li {
+	float: left;
+	width: 31.3%;
+}
+.linkBlock ul li:nth-child(2) {margin: 0 3.05%;}
+.linkBlock ul li a {
+	text-decoration: none;
+	display: block;
+	position: relative;
+}
+.linkBlock ul li a figure img {
+	width: 100%;
+	height: auto;
+}
+.linkBlock ul li a:hover h2 {
+	background: url(../img/icon_07.png) no-repeat 8px center;
+	color: #891c1c;
+}
+.linkBlock ul li a h2 {
+	font-size: 2rem;
+	background: url(../img/icon_07.png) no-repeat 5px center;
+	padding-left: 20px;
+	margin-top: 15px;
+}
+.linkBlock ul li a span {
+	font-size: 1.2rem;
+	position: absolute;
+	right: 0;
+	color: #cacac9;
+}
+
+/* banner */
+.bannerBlock {
+	padding-top: 60px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #e2e1e1;
+}
+.bannerBlock ul {list-style: none;}
+.bannerBlock .sp-image-container {
+	border: 3px solid #f4f4f4;
+	display: block;
+	border-radius: 4px;
+}
+.bannerBlock .sp-mask {padding-bottom: 6px;}
+.bannerBlock .sp-button {
+	background: url(../img/banner_icon_01.gif) no-repeat left top;
+	width: 10px;
+	height: 10px;
+	border: 0 !important;
+}
+.bannerBlock .sp-selected-button {
+	background: url(../img/banner_icon_02.gif) no-repeat left top;
+	width: 10px;
+	height: 10px;
+	border: 0 !important;
+}
+
+
+/* news */
+.newsBlock {
+	max-width: 1020px;
+	min-height: 230px;
+	margin: 60px auto 80px auto;
+	position: relative;
+}
+.newsBlock h2 {
+	float: left;
+	background: url(../img/news_title.gif) no-repeat left top;
+	width: 30px;
+	height: 133px;
+	overflow: hidden;
+	margin-left: 10px;
+}
+.newsBlock h2 span {
+	padding-top: 150px;
+	display: block;
+}
+
+/* news list */
+.newsBlock .topNewsList {
+	max-width: 90.58%;
+	width: 100%;
+	list-style: none;
+	display: block;
+	float: right;
+	border-top: 1px solid #d7d7d7;
+	font-family: 'Hiragino Mincho ProN', serif;
+}
+.newsBlock .topNewsList li {
+	font-size: 1.2rem;
+	background: url(../img/line_x_02.gif) repeat-x left bottom;
+}
+.newsBlock .topNewsList li:nth-child(2n) {
+	background: rgba(0,0,0,0.01) url(../img/line_x_02.gif) repeat-x left bottom;
+}
+.newsBlock .topNewsList li:last-child {
+	background-image: none;
+	border-bottom: 1px solid #d6d6d5;
+}
+.newsBlock .topNewsList li a {
+	padding: 18px 15px 18px 5px;
+	display: block;
+	text-decoration: none;
+	color: #555;
+	position: relative;
+}
+.newsBlock .topNewsList li a::after {
+	content: "";
+	width: 8px;
+	height: 5px;
+	position: absolute;
+	top: 50%;
+	right: 0px;
+	margin-top: -2px;
+	display: block;
+	background: url(../img/icon_03.png) no-repeat right center;
+}
+.newsBlock .topNewsList li a:hover {padding-left: 10px;}
+.newsBlock .topNewsList li a:hover .title {
+	text-decoration: underline;
+	color: #9b2020;
+}
+.newsBlock .topNewsList li a:hover::after {right: 5px;}
+.newsBlock .topNewsList li a p {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 1.2rem;
+	color: #454545;
+}
+.newsBlock .topNewsList li a p.time {
+	width: 10%;
+	color: #888888;
+}
+.newsBlock .topNewsList li a p.category {
+	width: 12%;
+	font-size: 1.2rem;
+	border-radius: 2px;
+	margin: 0 25px 0 10px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+}
+.newsBlock .topNewsList li a p.category.c1 {background: #7d8721;}
+.newsBlock .topNewsList li a p.category.c2 {background: #96724f;}
+.newsBlock .topNewsList li a p.category.c3 {background: #595959;}
+.newsBlock .topNewsList li a p.category span {
+	background: url(../img/category_bg.png) repeat left top;
+	display: block;
+	padding: 10px 0;
+}
+.newsBlock .topNewsList li a p.title {
+	width: 68%;
+	font-size: 1.2rem;
+	line-height: 1.4;
+}
+/* news read more */
+.newsBlock .readMore {
+	clear: both;
+	text-align: center;
+	position: absolute;
+	top: 150px;
+	left: 18px;
+}
+.newsBlock .readMore a {
+	width: 13px;
+	height: 71px;
+	overflow: hidden;
+	display: block;
+	background: url(../img/news_more.gif) no-repeat left top;
+}
+.newsBlock .readMore a span {
+	padding-top: 100px;
+	display: block;
+}
+/***********************************************************/
+.newsBlock .topNewsList li p {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 1.3em;
+}
+.c1 {background: #7d8721; padding: 10px 0;}
+.category {
+	width: 12%;
+	font-size: 1.2rem;
+	border-radius: 2px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	font-family: 'Hiragino Mincho ProN', serif;
+	margin: 0 25px 0 15px;
+}
+.time {
+	width: 12%;
+	color: #888;
+}
+.title02 {
+	width: 66%;
+	font-size: 1.2rem;
+	line-height: 1.4;
+}
+@media screen and (max-width: 1020px) {
+
+.time {
+	width: 15%;
+	color: #888;
+}
+.title02 {
+	width: 66%;
+	font-size: 1.2rem;
+	line-height: 1.4;
+}
+}
+@media screen and (max-width: 750px) {
+.category {
+	width: 30%;
+	font-size: 0.7rem;
+	border-radius: 2px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	font-family: 'Hiragino Mincho ProN', serif;
+	margin: 10px 15px 0 15px;
+}
+.time {
+	width: 35%;
+	color: #888;
+}
+.title02 {
+	width: 100%;
+	font-size: 1rem;
+	line-height: 1.4;
+}
+}
+/***********************************************************/
+
+
+
+
+/* TOP SLIDER --------------------------------------------------------------------- */
+
+body.top {overflow: hidden;}
+.top #mainVisual,
+.top #mainVisual2 {
+	position: relative;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: block;
+	z-index: 0;
+}
+.top #mainVisual:after,
+.top #mainVisual2::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.top #mainVisual *,
+.top #mainVisual2 * {max-width: inherit;}
+.top #mainVisual ul,
+.top #mainVisual2 ul {
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	display: block;
+}
+.top #mainVisual img.slideImg,
+.top #mainVisual2 img.slideImg {
+	height: 100%;
+	width: auto;
+	text-align: center;
+	margin: 0 auto;
+}
+.top #mainVisual ul li img.slideImg,
+.top #mainVisual2 ul li img.slideImg  {display: block;}
+@-webkit-keyframes scad {
+   from {
+      -webkit-transform:scale(1.15,1.15);
+      transform:scale(1.15,1.15);
+   }
+   to {
+      -webkit-transform:scale(1,1);
+      transform:scale(1,1);
+   }
+}
+@-moz-keyframes scad {
+   from {
+      -moz-transform:scale(1.15,1.15);
+      transform:scale(1.15,1.15);
+   }
+   to {
+      -moz-transform:scale(1,1);
+      transform:scale(1,1);
+   }
+}
+@keyframes scad {
+   from {
+      transform:scale(1.15,1.15);
+   }
+   to {
+      transform:scale(1,1);
+   }
+}
+
+/* pagenation */
+.top #mainVisual .pagination {
+	width: 11px;
+	height: auto;
+	position: fixed;
+	top: 0;
+	right: 30px;
+	display: none !important;
+	z-index: 9900;
+	list-style: none;
+}
+.top #mainVisual .pagination li {
+	width: 11px;
+	height: 11px;
+	margin-bottom: 7px;
+}
+.top #mainVisual .pagination li a {
+	width: 11px;
+	height: 11px;
+	border: 1px solid #454545;
+	border-radius: 100%;
+	display: block;
+	overflow: hidden;
+	text-indent: 100%;
+}
+.top #mainVisual .pagination li:last-child a {margin-bottom: 0;}
+.top #mainVisual .pagination li.current a {
+	border: none;
+	background: #454545;
+	position: relative;
+	left: 1px;
+}
+
+
+
+
+/* お知らせ (./news/) --------------------------------------------------------------------- */
+
+/* news select */
+.newsNav {display: inline-block;}
+.newsNav li {
+	display: table;
+	float: left;
+	vertical-align: middle;
+	margin-right: 30px;
+	background: url(../img/line_y_02.gif) repeat-y right top;
+	padding-right: 30px;
+}
+.newsNav li:last-child {
+	margin-right: 0;
+	padding-right: 0;
+	background: none;
+}
+.newsNav li p {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.4rem;
+	font-weight: bold;
+	color: #666666;
+	padding-right: 20px;
+}
+.newsNav li select {
+	width: 218px;
+	display: table-cell;
+	padding-left: 10px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-overflow: "";
+	box-shadow: none;
+	border: 1px solid #e0e0e0;
+	height: 38px;
+	border-radius: 4px;
+	font-family: 'Hiragino Mincho ProN', serif;
+	background: #ffffff url("../img/icon_select.gif") no-repeat scroll right center / 38px auto;
+	color: #333;
+	font-weight: bold;
+	position: relative;
+	font-size: 1.2rem;
+}
+.newsNav li select option {
+	padding: 12px 10px 10px 10px;
+	font-weight: normal;
+	border-bottom: 1px solid #f1f1f1;
+	border-right: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+/* news list */
+.newsList {
+	border-top: 1px solid #d6d6d5;
+	list-style: none;
+	width: auto;
+	display: block;
+}
+.newsList li {background: url(../img/line_x_02.gif) repeat-x left bottom;}
+.newsList li:nth-child(2n) {
+	background: rgba(0,0,0,0.01) url(../img/line_x_02.gif) repeat-x left bottom;
+}
+.newsList li:last-child {
+	background-image: none;
+	border-bottom: 1px solid #d6d6d5;
+}
+.newsList li a {
+	padding: 25px 15px 25px 0;
+	display: block;
+	text-decoration: none;
+	color: #555;
+	position: relative;
+}
+.newsList li a::after {
+	content: "";
+	width: 8px;
+	height: 5px;
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	margin-top: -2px;
+	display: block;
+	background: url(../img/icon_03.png) no-repeat right center;
+}
+.newsList li a:hover {padding-left: 10px;}
+.newsList li a:hover .title {
+	text-decoration: underline;
+	color: #9b2020;
+}
+.newsList li a:hover::after {right: 5px;}
+.newsList li a p {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 1.4rem;
+}
+.newsList li a p.time {width: 10%;}
+.newsList li a p.category {
+	width: 12%;
+	font-size: 1.2rem;
+	border-radius: 2px;
+	margin: 0 25px 0 25px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	font-family: 'Hiragino Mincho ProN', serif;
+}
+.newsList li a p.category.c1 {background: #7d8721;}
+.newsList li a p.category.c2 {background: #96724f;}
+.newsList li a p.category.c3 {background: #595959;}
+.newsList li a p.category span {
+	background: url(../img/category_bg.png) repeat left top;
+	display: block;
+	padding: 10px 0;
+}
+.newsList li a p.title {
+	width: 68%;
+	font-size: 1.6rem;
+	line-height: 1.4;
+}
+
+/* pagenav */
+nav.entryNav {margin-top: 30px;}
+nav.entryNav a {font-size: 1.2rem;}
+nav.entryNav .prev {
+	float: left;
+	padding-left: 15px;
+	background: url(../img/icon_02.gif) no-repeat left center;
+}
+nav.entryNav .next {
+	float: right;
+	padding-right: 15px;
+	background: url(../img/icon_01.gif) no-repeat right center;
+}
+nav.entryNav a:hover {color: #9b2020;}
+
+
+
+/* お知らせ詳細 (./news/entry.html) --------------------------------------------------------------------- */
+
+.newsEntry {
+	background: #fff;
+	border: 1px solid #eeeeee;
+	padding: 40px;
+	position: relative;
+}
+.newsEntry::before,
+.newsEntry::after {
+	z-index: -1;
+	position: absolute;
+	content: "";
+	bottom: 15px;
+	left: 10px;
+	width: 50%;
+	top: 80%;
+	max-width:300px;
+	background: #777;
+	-webkit-box-shadow: 0 15px 10px #e9e9e8;
+	-moz-box-shadow: 0 15px 10px #e9e9e8;
+	box-shadow: 0 15px 10px #e9e9e8;
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+.newsEntry:after {
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+	transform: rotate(3deg);
+	right: 10px;
+	left: auto;
+}
+.newsEntry ul {
+	width: 100%;
+	list-style: none;
+	display: block;
+}
+.newsEntry header {
+	border-top: 2px solid #d9d9d9;
+	padding-top: 30px;
+	padding-bottom: 18px;
+	background: url(../img/line_x_02.gif) repeat-x left bottom;
+}
+.newsEntry header .information li {
+	font-size: 1.4rem;
+	color: #555;
+	display: inline;
+}
+.newsEntry header .information li:after {
+	content: "/";
+	position: relative;
+	display: inline;
+	margin: 0 3px;
+}
+.newsEntry header .information li:last-child::after {display: none;}
+.newsEntry header h1 {
+	font-size: 3rem;
+	margin-top: 15px;
+	line-height: 1.3;
+}
+.newsEntry .articleBody {
+	margin-top: 20px;
+	padding-bottom: 20px;
+	background: url(../img/line_x_02.gif) repeat-x left bottom;
+}
+.newsEntry .articleBody p {
+	font-size: 1.6rem;
+	line-height: 2;
+	color: #666;
+	margin-bottom: 12px;
+}
+.newsEntry .articleBody p img {
+	height: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.newsEntry footer {
+
+	text-align: center;
+	padding-top: 30px;
+	margin-bottom: 15px;
+}
+.newsEntry footer dl dt {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.newsEntry footer dl dd ul {
+	display: table;
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
+	border-spacing: 15px 0;
+	border-collapse: separate;
+}
+.newsEntry footer dl dd ul li {
+	width: 33%;
+	display: table-cell;
+	font-size: 1.2rem;
+}
+.newsEntry footer dl dd ul li a {
+	background: #f0f0f0;
+	border-radius: 4px;
+	padding: 15px 0 16px 0;
+	border-top: 1px solid #e0e0e0;
+	display: block;
+	text-decoration: none;
+}
+.newsEntry footer dl dd ul li a:hover {
+	background: #e0e0e0;
+}
+.newsEntry footer .back {
+	margin-top: 30px;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+}
+.newsEntry footer .back a {
+	padding: 27px 0;
+	font-size: 1.4rem;
+	line-height: 1;
+	display: block;
+	font-weight: bold;
+}
+.newsEntry footer .back a:hover {
+	background: #333;
+	color: #fff;
+}
+
+
+
+
+
+/*  (./work/) --------------------------------------------------------------------- */
+
+/* 商品紹介 (./lineup/) --------------------------------------------------------------------- */
+
+.itemListBlock  {margin-top: 10px;}
+ul.itemListBlock,
+ul.itemListBlock ul {
+	list-style: none;
+	margin-top: 20px;
+}
+ul.itemListBlock li.categoryBlock {
+	width: 100%;
+	background: url(../img/line_x_01.gif) repeat-x left bottom;
+	margin-top: 20px;
+}
+ul.itemListBlock li:first-child {padding: 0;}
+ul.itemListBlock .titleBlock,
+ul.itemListBlock ul.itemList {float: left;}
+ul.itemListBlock .titleBlock {width: 100%;}
+ul.itemListBlock .titleBlock div {
+	width: 100%;
+	padding-top: 20px;
+	text-align: center;
+	position: relative;
+}
+ul.itemListBlock .titleBlock div h2 {position: relative;}
+ul.itemListBlock .titleBlock div h2::after {
+	display: none;
+	content: "";
+	width: 60px;
+	height: 1px;
+	background: #e1e1e1;
+	position: relative;
+	margin: 20px auto 0 auto;
+}
+ul.itemListBlock .titleBlock div p {
+	margin-top: 25px;
+	font-size: 1.2rem;
+	line-height: 1.66;
+	text-align: left;
+	color: #555;
+}
+ul.itemListBlock ul.itemList {width: 100%;}
+ul.itemListBlock ul.itemList li {
+	float: left;
+	width: 50%;
+	margin-bottom: 40px;
+}
+ul.itemListBlock ul.itemList li:nth-child(2n) {float: right;}
+ul.itemListBlock ul.itemList li figure,
+ul.itemListBlock ul.itemList li div {
+	display: table-cell;
+	vertical-align: middle;
+}
+ul.itemListBlock ul.itemList li figure {
+	width: 41.67%;
+	text-align:  center;
+	position: relative;
+}
+ul.itemListBlock ul.itemList li figure img {
+	position: relative;
+	bottom: -5px;
+	left: 0;
+	right: 0;
+	display: block;
+	margin: 0 auto;
+}
+ul.itemListBlock ul.itemList li div {width: 100%;}
+ul.itemListBlock ul.itemList li div .name {
+	font-size: 2rem;
+	font-weight: bold;
+	border-bottom: 1px dotted #999;
+	margin-bottom: 5px;
+}
+ul.itemListBlock ul.itemList li div .sub {
+	font-size: 1.5rem;
+	color: #666666;
+	margin-top: 11px;
+	margin-bottom: 13px;
+	font-family: 'Hiragino Mincho ProN', serif;
+}
+ul.itemListBlock ul.itemList li div .sub a{
+	color: #C60;
+	text-decoration: none;
+}
+ul.itemListBlock ul.itemList li div .sub a:hover{
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #C60;
+}
+ul.itemListBlock ul.itemList li div .comment {
+	font-size: 1.5rem;
+	line-height: 1.3;
+	color: #666666;
+	font-family: 'Hiragino Mincho ProN', serif;
+}
+ul.itemListBlock ul.itemList li div .more {
+	width: auto;
+	text-align: center;
+	margin-top: 15px;
+}
+ul.itemListBlock ul.itemList li div .more a {
+	border: 1px solid #9b2020;
+	display: block;
+	text-decoration: none;
+	padding: 10px 0 10px 0;
+	color: #fff;
+	font-size: 1.3rem;
+	border-radius: 2px;
+	background: #9b2020;
+}
+ul.itemListBlock ul.itemList li div .more a:hover {
+	border: 1px solid #ddb8b8;
+	color: #9b2020;
+	background: #fff;
+}
+
+.name a{
+	text-decoration: none;
+	line-height: 180%;
+}
+.name a:hover{color: #9b2020;}
+
+
+
+/* 商品詳細 (./lineup/xx.html) --------------------------------------------------------------------- */
+
+.itemArea {
+	margin: 0 auto;
+	background: #fff;
+	box-sizing: border-box;
+	border: 1px solid #ededed;
+	position: relative;
+	display: block;
+}
+.itemArea::before,
+.itemArea::after {
+	z-index: -1;
+	position: absolute;
+	content: "";
+	bottom: 15px;
+	left: 10px;
+	width: 50%;
+	top: 80%;
+	max-width:300px;
+	background: #777;
+	-webkit-box-shadow: 0 15px 10px #e9e9e8;
+	-moz-box-shadow: 0 15px 10px #e9e9e8;
+	box-shadow: 0 15px 10px #e9e9e8;
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+.itemArea:after {
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+	transform: rotate(3deg);
+	right: 10px;
+	left: auto;
+}
+.itemArea ul {
+	list-style: none;
+	display: block;
+}
+.itemArea .itemAreaBody {
+	width: 87.23%;
+	margin: 5% auto;
+}
+.itemArea .itemAreaBody .information {
+	clear: both;
+	width: auto;
+	border: 1px solid #dbaaaa;
+	text-align: center;
+	padding: 16px;
+	font-size: 1.3rem;
+	line-height: 1.75;
+	font-weight: bold;
+	color: #9b2020;
+	border-radius: 2px;
+	margin-bottom: 10px;
+}
+.itemArea .itemAreaBody .leftArea {
+	width: 41.47%;
+	float: left;
+}
+.leftArea h2{
+	font-size: 3.1em;
+	color: #9b2020;
+	border-bottom: 1px dotted #9b2020;
+	padding-bottom:10px;
+	font-weight: bold;
+}
+.itemArea .itemAreaBody .rightArea {
+	width: 52.6%;
+	float: right;
+}
+
+/* header */
+.itemArea header {margin-bottom: 20px;}
+.itemArea header .category {
+	font-size: 1.6rem;
+	margin-bottom: 20px;
+}
+.itemArea header h1 {
+	font-size: 4rem;
+	color: #9b2020;
+	margin-bottom: 16px;
+}
+.itemArea header .size li {
+	font-size: 1.3rem;
+	float: left;
+	color: #555;
+	border: 1px solid #dddddd;
+	border-radius: 2px;
+	padding: 5px;
+	margin-right: 10px;
+}
+
+/* contents */
+.itemArea .textBlock h2 {
+	font-size: 1.6rem;
+	line-height: 1.43;
+	font-weight: bold;
+	margin-bottom: 4px;
+	color: #454545;
+}
+.itemArea .textBlock p {
+	font-size: 1.4rem;
+	line-height: 1.7;
+	color: #777777;
+}
+.itemArea .detailBlock {
+	margin-top: 25px;
+	background: #fafafa;
+	border-top: 1px solid #e1e1e1;
+}
+.itemArea .detailBlock .detailBlockBody {
+	padding-bottom: 20px;
+	margin: 0 0 20px 0;
+}
+.itemArea .detailBlock table {width: 100%;}
+.itemArea .detailBlock table th,
+.itemArea .detailBlock table td {
+	padding: 10px 0;
+	font-size: 1.3rem;
+	line-height: 1.5;
+	background: url(../img/line_x_04.gif) repeat-x left bottom;
+	font-family: 'Hiragino Mincho ProN', serif;
+}
+.itemArea .detailBlock table th {
+	width: 44.516%;
+	color: #914f4f;
+	font-weight: bold;
+	font-size: 2rem;
+	text-align:center;
+}
+.itemArea .detailBlock table td {width: 55.484%;}
+.itemArea .detailBlock table td dl dt,
+.itemArea .detailBlock table td dl dd {
+	display: inline-block;
+	vertical-align: top;
+	color: #555;
+	margin-bottom: 5px;
+}
+.itemArea .detailBlock table td dl dt.last,
+.itemArea .detailBlock table td dl dd.last {margin-bottom: 0;}
+.itemArea .detailBlock table td dl dt {
+	width: 30%;
+	font-weight: bold;
+}
+.itemArea .detailBlock table td dl dd {	width: 70%;}
+.itemArea .detailBlock table td dl dd::before {
+	content: ":";
+	margin: 0 5px;
+	display: inline;
+	color: #777;
+}
+.itemArea .priceBlock h3 {
+	border-left: 3px solid #9b2020;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #9b2020;
+	padding: 1px 0 1px 6px;
+	margin-bottom: 13px;
+	font-family: 'Hiragino Mincho ProN', serif;
+}
+.itemArea .priceBlock ul {border-top: 1px solid #e6e6e6;}
+.itemArea .priceBlock ul li {
+	border-bottom: 1px solid #e6e6e6;
+	padding: 15px 0;
+}
+.itemArea .priceBlock ul li p {
+	display: inline-block;
+	vertical-align: middle;
+}
+.itemArea .priceBlock ul li .size {
+	width: 20.5%;
+	font-size: 1.4rem;
+}
+.itemArea .priceBlock ul li .price {
+	font-size: 2.2rem;
+	font-weight: bold;
+}
+.itemArea .priceBlock ul li .price span {
+	font-size: 1.2rem;
+	font-weight: normal;
+	padding-right: 15px;
+}
+.itemArea .priceBlock ul li .buy {
+	width: 100%;
+	text-align: center;
+}
+.itemArea .priceBlock ul li .buy a{
+	color: #fff;
+	font-size: 2rem;
+	display: block;
+	font-weight: bold;
+	padding: 20px 0;
+	text-decoration: none;
+	border-radius: 2px;
+}
+.itemArea .priceBlock ul li .buy.close span {
+	color: #fff;
+	font-size: 1.3rem;
+	display: block;
+	font-weight: bold;
+	padding: 13px 0;
+	text-decoration: none;
+	border-radius: 2px;
+}
+.itemArea .priceBlock ul li .buy a {background: #9b2020;}
+.itemArea .priceBlock ul li .buy.close span {background: #666; padding: 13px; line-height:150%;}
+.itemArea .priceBlock ul li .buy a:hover {background: #891c1c;}
+.itemArea .priceBlock .minText {
+	margin-top: 15px;
+	font-size: 1.2rem;
+	color: #555555;
+}
+.itemArea .priceBlock .minText a {color: #9b2020;}
+
+/* footer */
+.itemArea footer {clear: both;}
+.itemArea footer p {
+	padding-top: 50px;
+	display: block;
+}
+.itemArea footer a {
+	text-align: center;
+	text-decoration: none;
+	font-size: 2rem;
+	display: block;
+	font-weight: bold;
+	padding: 26px 0;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	background-color: #532901;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	color: #FFF;
+}
+.itemArea footer a:hover {
+	color: #fff;
+	background-color: #900;
+}
+
+/* slider */
+#itemSlide {text-align: right !important;}
+#itemSlide * {cursor: default !important;}
+#itemSlide .sp-slides-container{display: block;}
+#itemSlide .sp-thumbnail-container {
+	border: 1px solid #e5e5e5;
+	border-radius: 2px;
+}
+#itemSlide .sp-mask {
+	border: 1px solid #e5e5e5;
+	border-radius: 2px;
+}
+#itemSlide .sp-thumbnail-container img {border: 1px solid #e5e5e5;}
+#itemSlide .sp-thumbnails-container {
+	width: 100% !important;
+	text-align: right !important;
+}
+#itemSlide .sp-thumbnail-container {
+	margin-left: 8px !important; 
+}
+#itemSlide .sp-thumbnails {
+	margin-top: 10px !important;
+	display: inline-block !important;
+	text-align: right !important;
+	position: relative !important;
+	right: 0 !important;
+}
+#itemSlide .sp-bottom-thumbnails, .sp-top-thumbnails {
+	right: 0 !important;
+	left: inherit !important;
+	margin: 0 !important;
+}
+
+
+
+
+
+/* 会社案内 (./about/) --------------------------------------------------------------------- */
+
+.historyArea {
+	text-align: center;
+	padding: 30px 0 40px 0;
+	position: relative;
+	overflow: hidden;
+}
+.historyArea .minCopy,
+.historyArea h2,
+.historyArea .txt {
+	position: relative;
+	z-index: 10;
+}
+.historyArea .minCopy {
+	font-size: 1.2rem;
+	border-bottom: 1px solid #979796;
+	display: inline-block;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+}
+.historyArea h2 {
+	font-size: 3rem;
+	line-height: 1.368;
+	color: #636b30;
+	margin-bottom: 15px;
+}
+.historyArea .txt {
+	font-size: 1.5rem;
+	line-height: 2;
+	margin-bottom: 20px;
+}
+.historyArea .txt:last-child {margin-bottom: 0;}
+.historyArea .obj1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 556px;
+	height: 302px;
+	background: url(../img/obj_01.gif) no-repeat left top;
+}
+.historyArea .obj2 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	width: 628px;
+	height: 574px;
+	background: url(../img/obj_02.gif) no-repeat left top;
+}
+
+/* deriveArea */
+.deriveArea {
+	background: #222222;
+	padding: 2px;
+}
+.deriveArea .fx {display: flex;}
+.deriveArea .fx section {width: 100%;}
+.deriveArea section {
+	background: #fff;
+	border: 1px solid #222;
+	width: auto;
+	height: 200px;
+	text-align: center;
+}
+.deriveArea section a {
+	width: 100%;
+	display: table;
+	text-align: center;
+	margin: 0 auto;
+	text-decoration: none;
+}
+.deriveArea section a div {
+	height: 200px;
+	display: table-cell;
+	vertical-align: middle;
+}
+.deriveArea section a div h3 {
+	font-size: 2.2rem;
+	margin-bottom: 20px;
+	font-weight:bold;
+}
+.deriveArea section a div p {
+	font-size: 1.2rem;
+}
+.deriveArea section a div .more {
+	width: 190px;
+	display: block;
+	margin: 26px auto 0 auto;
+	padding: 15px 0;
+	font-size: 1.3rem;
+	border: 1px solid rgba(250,250,250,0.7);
+	position: relative;
+	border-radius: 2px;
+	font-weight: bold;
+}
+.deriveArea section a:hover div .more {
+	border: 1px solid #fff;
+	background: #fff;
+	color: #555;
+}
+.deriveArea section a div .more::after {
+	content: "";
+	width: 20px;
+	height: 7px;
+	background: url(../img/icon_link_01.png) no-repeat left top;
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	margin-top: -4px;
+}
+.deriveArea section a div * {color: #fff;}
+.deriveArea section:hover {border: 1px solid #fff;}
+.deriveArea section.d1 {
+	background: url(../img/futter/d01.jpg) no-repeat center center;
+	background-size: cover;
+}
+.deriveArea section.d2 {
+	background: url(../img/futter/d02.jpg) no-repeat center center;
+	background-size: cover;
+}
+.deriveArea section.d3 {
+	background: url(../img/futter/d03.jpg) no-repeat center center;
+	background-size: cover;
+}
+.deriveArea section.d4 {
+	background: url(../img/futter/d04.jpg) no-repeat center center;
+	background-size: cover;
+}
+.deriveArea section.d5 {
+	background: url(../img/futter/d05.jpg) no-repeat center center;
+	background-size: cover;
+}
+.deriveArea section.d6 {
+	background: url(../img/futter/d06.jpg) no-repeat center center;
+	background-size: cover;
+}
+.deriveArea section.d7 {
+	background: url(../img/futter/d07.jpg) no-repeat center center;
+	background-size: cover;
+}
+.deriveArea section.d8 {
+	background: url(../img/futter/d08.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+
+
+
+
+
+/* 会社案内--------------------------------------------------------------------- */
+
+.visual {
+	margin: 40px 60px 55px 60px;
+	text-align: center;
+}
+.visual img {
+	width: 100%;
+	max-width: 1230px;
+	height: auto;
+}
+.companyBox {
+	width: auto;
+	padding: 0 0 60px 0;
+}
+.companyBox.dk {padding: 60px 0 100px 0;}
+.companyBox table.typeA {width: 100%;}
+.companyBox table.typeB {width: 100%;}
+.typeC {
+	padding: 20px;
+	margin: 10px 0;
+	background-color: #F2F2F2;
+	line-height:150%;
+	font-size:1.5em;
+	border: 2px dotted #999;
+	}
+.typeC p{ margin:10px 0;}
+
+
+.companyBox table {
+	float: left;
+	vertical-align: top;
+	border-top: 1px solid #dfdfde;
+}
+.companyBox table:last-child {float: right;}
+.companyBox table.typeA th {color: #333;}
+.companyBox table.typeA td {color: #555;}
+.companyBox table.typeB td {
+	color: #555;
+	margin: 0px;
+	padding: 10px;
+	background-color: #FFF;
+}
+.companyBox table.typeB th {
+	width: 15%;
+	text-indent:10px;
+	color: #914f4f;
+	margin: 0px;
+	padding: 10px;
+	background-color: #EFE0E0;
+}
+.companyBox table.typeC td {color: #555;}
+.companyBox table.typeC th {color: #914f4f;}
+.companyBox table th,
+.companyBox table td {
+	text-align: left;
+	vertical-align: top;
+	font-size: 1.3rem;
+	line-height: 1.5;
+	background: url(../img/line_x_03.gif) repeat-x left bottom;
+}
+.companyBox table th {
+	width: 26.66%;
+	padding: 20px 0 20px 0;
+}
+.companyBox table th span {
+	font-size: 1.2rem;
+	color: #777;
+}
+.companyBox table td {
+	width: 73.34%;
+	padding: 20px 0 20px 0;
+}
+.companyBox table td ul {
+	list-style: none;
+}
+.companyBox table td ul li {
+	padding: 0 0 20px 0;
+	margin: 0 0 20px 0;
+	background: url(../img/line_x_03.gif) repeat-x left bottom;
+}
+.companyBox table td ul li:last-child {
+	padding: 0;
+	margin: 0;
+	background: none;
+}
+
+/* 採用情報 --------------------------------------------------------------------- */
+.recruitlist{
+	margin: 40px auto;
+	width:90%;
+	font-size: 1.5em;
+}
+.recruitlist a{
+	text-decoration: none;
+	display: block;
+	color: #914f4f;
+	font-weight: bolder;
+}
+.recruitlist a:hover{
+	text-indent:3%;
+	background-color: #914f4f;
+	color: #FFF;
+}
+.recruitlist li{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.recruitlist li{
+	list-style-type: none;
+	font-size: 1.4em;
+	padding: 2px;
+	line-height:120%;
+	border-bottom: 1px dotted #CCC;
+	margin:20px 0;
+}
+
+.recruitday{
+	float: left;
+	width: 20%;
+	text-indent: 20px;
+}
+.recruittitle{
+	float: right;
+	width: 78%;
+}
+.recruitcoment{
+	font-size: 0.7em;
+	text-indent:25px;
+}
+
+@media screen and (max-width: 1020px) {
+.recruitday{
+	float: none;
+	width: 100%;
+	text-indent: 0px;
+}
+.recruittitle{
+	float: none;
+	width: 100%;
+}
+.recruitcoment{
+	font-size: 0.7em;
+	text-indent:0px;
+}
+}
+
+/* free --------------------------------------------------------------------- */
+
+.messageArea {
+	text-align: center;
+	position: relative;
+	padding-bottom: 80px;
+}
+.messageArea h2,
+.messageArea p {
+	position: relative;
+	z-index: 10;
+}
+.messageArea h2 {
+	padding-top: 60px;
+	color: #636b30;
+	font-size: 3.8rem;
+	line-height: 1.368;
+	margin-bottom: 22px;
+}
+.messageArea p {
+	font-size: 1.5rem;
+	color: #555;
+	line-height: 2;
+	margin-bottom: 14px;
+}
+.messageArea p.photo {
+	margin-bottom: 20px;
+	padding-top: 7px;
+}
+.messageArea p.name {
+	line-height: 1.6;
+	margin-bottom: 0;
+}
+.messageArea p.name span {font-size: 1.3rem;}
+
+/* layer obj */
+.messageArea .obj1,
+.messageArea .obj2,
+.messageArea .obj3 {
+	position: absolute;
+	z-index: 1;
+}
+.messageArea .obj1 {
+	width: 578px;
+	height: 487px;
+	background: url(../img/message_obj_01.png) no-repeat left top / cover;
+	top: 0;
+	left: 0;
+}
+.messageArea .obj2 {
+	width: 100%;
+	height: 730px;
+	background: url(../img/message_obj_02.png) no-repeat right top / cover;
+	bottom: 0;
+	right: 0;
+}
+.messageArea .obj3 {
+	width: 191px;
+	height: 91px;
+	background: url(../img/message_obj_03.png) no-repeat left top / cover;
+	top: 78px;
+	right: 263px;
+}
+.messageArea .obj4 {
+	width: 100%;
+	overflow: hidden;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.messageArea .obj4 p {
+	position: absolute;
+	z-index: 1;
+	display: block;
+}
+.messageArea .obj4 p img {
+	position: relative;
+}
+.messageArea .obj4 p.l1 {
+	top: 44px;
+	right: 104px;
+}
+.messageArea .obj4 p.l2 {
+	top: 442px;
+	left: 126px;
+}
+.messageArea .obj4 p.l3 {
+	top: 176px;
+	left: 165px;
+	z-index: 3;
+}
+.messageArea .obj4 p.l4 {
+	top: 591px;
+	right: 185px;
+}
+.messageArea .obj4 p.l5 {
+	top: 718px;
+	right: 95px;
+}
+.messageArea .obj4 p.l6 {
+	top: 492px;
+	right: -19px;
+}
+.messageArea .obj4 p.l7 {
+	top: 355px;
+	right: 111px;
+}
+.messageArea .obj4 p.l8 {
+	top: 274px;
+	right: 30px;
+}
+.messageArea .obj4 p.l9 {
+	top: 125px;
+	left: 115px;
+}
+.messageArea .obj4 p.l10 {
+	top: 724px;
+	left: -30px;
+}
+.messageArea .obj4 p.l11 {
+	top: 313px;
+	left: -20px;
+}
+
+
+
+
+
+/* free02 --------------------------------------------------------------------- */
+
+.googlemap {
+	margin: 40px 60px 0 60px;
+	text-align: center;
+}
+#map_canvas {
+	width: 100%;
+	height: 0;
+	max-height: 550px;
+	margin-top: 20px;
+	position: relative;
+	padding-bottom: 31.436%;
+	padding-top: 30px;
+	overflow: hidden;
+}
+.mapTitle {
+	padding: 15px 0 15px 0;
+}
+.googlemapText {
+	margin: 20px 60px 100px 60px;
+	font-size: 1.3rem;
+	line-height: 1.65;
+	color: #333;
+	position: relative;
+}
+.googlemapText .glink {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.googlemapText .glink a {
+	background: url(../img/icon_05.gif) no-repeat left center;
+	padding-left: 15px;
+}
+.googlemapText .glink a:hover {
+	padding-left: 10px;
+	color: #9b2020;
+}
+
+
+
+
+
+
+/* free03 --------------------------------------------------------------------- */
+
+.flowNav {
+	text-align: center;
+	margin-bottom: 90px;
+	margin-top: 52px;
+}
+.flowNav h2 {
+	font-size: 3.2rem;
+	line-height: 1.531;
+	margin-bottom: 17px;
+}
+.flowNav .copy {
+	font-size: 1.4rem;
+	line-height: 2;
+	color: #555;
+}
+.flowNav ol,
+.flowNav ul {
+	list-style: none;
+	display: table;
+	margin: 40px auto 0 auto;
+	background: url(../img/line_y_04.gif) repeat-y left top;
+}
+.flowNav li {
+	display: table-cell;
+	vertical-align: top;
+	background: url(../img/line_y_04.gif) repeat-y right top;
+	position: relative;
+}
+.flowNav li::after {
+	content: "";
+	width: 11px;
+	height: 6px;
+	background: url(../img/icon_06.gif) no-repeat center bottom;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 10px;
+	margin: 0 auto;
+}
+.flowNav li a {
+	padding: 10px 18px 40px 18px;
+	display: block;
+	position: relative;
+}
+.flowNav li:hover {
+	background-color: rgba(0,0,0,0.02);
+}
+.flowNav li:hover::after {
+	bottom: 5px;
+}
+.demiVisual {
+	width: 100%;
+	max-width: 100%;
+	list-style: none;
+	display: block;
+	border-top: 1px solid #eeeeee;
+}
+.demiVisual li {
+	background: #fff;
+	position: relative;
+	top: 0;
+}
+.demiVisual li section {
+	width: 100%;
+	display: block;
+	table-layout:fixed;
+}
+.demiVisual li .box {
+	background: #fff;
+	display: table;
+}
+.demiVisual.flow li .box div {
+	height: 530px;
+	display: table-cell;
+	vertical-align: middle;
+	margin: 0 auto;
+}
+.demiVisual.flow li .box h2 {
+	text-align: center;
+	position: relative;
+	top: 40px;
+}
+.demiVisual.flow li .box h2 img {
+	margin: 0 auto;
+}
+.demiVisual.flow li .box p {
+	width: 300px;
+	margin: 30px auto 0 auto;
+	font-size: 1.3rem;
+	line-height: 1.846;
+	color: #454545;
+	text-align: left;
+	position: relative;
+	top: -40px;
+}
+.demiVisual.flow li .box h2,
+.demiVisual.flow li .box p{
+	-webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+	transition:         all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.demiVisual.flow li.fx .box h2,
+.demiVisual.flow li.fx .box p {top: 0;}
+.demiVisual li .box,
+.demiVisual li figure {
+	width: 50%;
+	text-align: center;
+	position: relative;
+}
+.demiVisual li .box,
+.demiVisual li:nth-child(2n) figure {float: left;}
+
+.demiVisual li figure,
+.demiVisual li:nth-child(2n) .box {float: right;}
+
+.demiVisual li#flow1 figure,
+.demiVisual li#flow2 figure,
+.demiVisual li#flow3 figure,
+.demiVisual li#flow4 figure,
+.demiVisual li#flow5 figure,
+.demiVisual li#flow6 figure {height: 530px;
+}.demiVisual li#flow1 figure {
+	background: url(../../about/images/flow_01.jpg) no-repeat center center;
+	background-size: cover;
+}
+.demiVisual li#flow2 figure {
+	background: url(../../about/images/flow_02.jpg) no-repeat center center;
+	background-size: cover;
+}
+.demiVisual li#flow3 figure {
+	background: url(../../about/images/flow_03.jpg) no-repeat center center;
+	background-size: cover;
+}
+.demiVisual li#flow4 figure {
+	background: url(../../about/images/flow_04.jpg) no-repeat center center;
+	background-size: cover;
+}
+.demiVisual li#flow5 figure {
+	background: url(../../about/images/flow_05.jpg) no-repeat center center;
+	background-size: cover;
+}
+.demiVisual li#flow6 figure {
+	background: url(../../about/images/flow_06.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+/* scroll fx */
+.demiVisual.flow li figure {overflow: hidden;}
+.demiVisual.flow li figure::after {
+	content: "";
+	display: block;
+	width: 200%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: -50%;
+	background: #eeeeee;
+	-webkit-transform: skew(140deg);
+	-moz-transform: skew(140deg); 
+	-webkit-transition: all 2s cubic-bezier(0.86, 0, 0.07, 1);
+	-moz-transition: all 2s cubic-bezier(0.86, 0, 0.07, 1);
+	transition: all 2s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.demiVisual.flow li.fx figure::after {
+	width: 0;
+	height: 100%;
+	opacity: 0;
+}
+.demiVisual.work {
+	margin-bottom: 0;
+	position: relative;
+}
+.demiVisual.work .box div.boxBody {
+	width: 60%;
+	margin: 0 auto;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.demiVisual.work .box div.boxBody div {
+	width: 50%;
+	min-width: 260px;
+	margin: 0 auto;
+	display: inline-block;
+	text-align: center;
+}
+.demiVisual.work .box div h2 {
+	width: 57px;
+	float: left;
+	text-align: left;
+}
+.demiVisual.work .box div p {
+	width: 70.58%;
+	min-width: 185px;
+	float: right;
+	font-size: 1.4rem;
+	line-height: 2;
+	text-align: left;
+	color: #454545;
+	margin-top: 60px;
+}
+.demiVisual.work .box div p.more a {
+	width: 90%;
+	display: block;
+	background: #9b2020;
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.3rem;
+	line-height: 1;
+	padding: 17px 0;
+	border-radius: 2px;
+	text-decoration: none;
+	text-align: center;
+	position: relative;
+}
+.demiVisual.work .box div p.more a::after {
+	content: "";
+	width: 20px;
+	height: 7px;
+	background: url(../img/icon_link_01.png) no-repeat left top;
+	position: absolute;
+	display: block;
+	top: 50%;
+	right: 15px;
+	margin-top: -5px;
+}
+.demiVisual.work .box div p.more a:hover {background: #891c1c;}
+.demiVisual.work .box div p.more a:hover::after {right: 10px;}
+
+.demiVisual li#work1 figure,
+.demiVisual li#work2 figure,
+.demiVisual li#work3 figure,
+.demiVisual li#work4 figure {height: 530px;}
+.demiVisual li#work1 figure {
+	background: url(../../work/images/work_img_01.jpg) no-repeat center center;
+	background-size: cover;
+}
+.demiVisual li#work2 figure {
+	background: url(../../work/images/work_img_02.jpg) no-repeat center center;
+	background-size: cover;
+}
+.demiVisual li#work3 figure {
+	background: url(../../work/images/work_img_03.jpg) no-repeat center center;
+	background-size: cover;
+}
+.demiVisual li#work4 figure {
+	background: url(../../work/images/work_img_04.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+/* scroll fx */
+.demiVisual.work li figure {overflow: hidden;}
+.demiVisual.work li figure::after {
+	content: "";
+	display: block;
+	width: 200%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: -50%;
+	background: #eeeeee;
+	-webkit-transform: skew(140deg);
+	-moz-transform: skew(140deg); 
+	-webkit-transition: all 2s cubic-bezier(0.86, 0, 0.07, 1);
+	-moz-transition: all 2s cubic-bezier(0.86, 0, 0.07, 1);
+	transition: all 2s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.demiVisual.work li.fx figure::after {
+	width: 0;
+	height: 100%;
+	opacity: 0;
+}
+
+
+
+
+
+/* お問い合わせ (./comtact/) --------------------------------------------------------------------- */
+
+.formArea .message {
+	font-size: 1.3rem;
+	line-height: 1.714;
+}
+#contactForm {padding-top: 30px;}
+#contactForm select {
+	width: 260px;
+	display: table-cell;
+	padding-left: 10px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-overflow: "";
+	box-shadow: none;
+	border: 1px solid #e0e0e0;
+	height: 38px;
+	border-radius: 4px;
+	font-family: 'Hiragino Mincho ProN', serif;
+	background: #ffffff url("../img/icon_select.gif") no-repeat scroll right center / 38px auto;
+	color: #333;
+	font-weight: bold;
+	position: relative;
+	font-size: 1.2rem;
+}
+#contactForm select option {
+	padding: 12px 10px 10px 10px;
+	font-weight: normal;
+	border-bottom: 1px solid #f1f1f1;
+	border-right: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+#contactForm table {
+	width: 100%;
+	border-top: 1px solid #d5d5d5;
+}
+#contactForm table th,
+#contactForm table td {
+	vertical-align: top;
+	padding: 20px 0;
+	border-bottom: 1px solid #d5d5d5;
+}
+#contactForm table th {
+	width: 26.9%;
+	font-size: 1.3rem;
+}
+#contactForm table td {
+	width: 73.1%;
+}
+#contactForm table th p {
+	font-size: 1.3rem;
+	color: #454545;
+	position: relative;
+	display: inline;
+	top: 14px;
+}
+#contactForm table th p .required {
+	color: #de1f1f;
+	font-size: 20px;
+	position: absolute;
+	top: 1px;
+	right: -14px;
+}
+#contactForm table td p {
+	font-size: 12px;
+	line-height: 1.6;
+	color: #7b7573;
+	margin-top: 12px;
+}
+#contactForm .submit {
+	margin-top: 30px;
+	text-align: center;
+}
+#contactForm button {
+	font-family: 'Hiragino Mincho ProN', serif;
+	width: 380px;
+	margin: 0 auto;
+	background: #9b2020;
+	box-shadow: none;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: bold;
+	padding: 23px 0 21px 0;
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	position: relative;
+}
+#contactForm button::after {
+	content: "";
+	width: 20px;
+	height: 7px;
+	background: url(../img/icon_link_01.png) no-repeat left center;
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	margin-top: -4px;
+	display: block;
+}
+#contactForm button:hover {background: #891c1c;}
+
+/* check */
+#contactForm.form_check th p {position: static;}
+#contactForm.form_check th,
+#contactForm.form_check td {
+	vertical-align: top;
+	font-size: 14px;
+	line-height: 1.714;
+}
+#contactForm.form_check th p,
+#contactForm.form_check td p {
+	font-size: 14px;
+	line-height: 1.714;
+}
+
+/* result */
+#result {
+	width: 600px;
+	margin: 60px auto 0 auto;
+	background: none;
+	border-radius: 4px;
+	text-align: center;
+	padding: 60px 0;
+}
+#result h2 {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 15px;
+	color: #454545;
+}
+#result .copy {
+	font-size: 14px;
+	color: #454545;
+}
+#result .submit {margin-top: 40px;}
+#result .submit a {
+	width: 300px;
+	display: block;
+	background: #9b2020;
+	margin: 0 auto;
+	padding: 23px 0 21px 0;
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: bold;
+	text-decoration: none;
+}
+#result .submit a:hover {background: #891c1c;}
+
+
+
+
+
+/* プライバシーポリシー (./privacypolicy/) --------------------------------------------------------------------- */
+
+.ppContents {
+	font-size: 1.2rem;
+	line-height: 1.6;
+}
+.ppContents ul {
+	list-style: none;
+	display: block;
+}
+.ppContents ul.ppList {
+	list-style: none;
+	display: block;
+	margin-top: 37px;
+}
+.ppContents ul.ppList > li {margin-bottom: 39px;}
+.ppContents ul.ppList > li ul {margin-top: 8px;}
+.ppContents section h2 {
+	font-weight: bold;
+	margin-bottom: 8px;
+	font-size: 1.8rem;
+	line-height: 1.75;
+}
+.ppTxt,
+.ppContents section p,
+.ppContents ul.ppList > li li {
+	font-size: 1.4rem;
+	line-height: 1.75;
+}
+
+.ppContents .contactBox {
+	margin-top: 23px;
+	border: 2px solid #e1e1e0;
+	padding: 33px;
+}
+.ppContents .contactBox h3 {
+	font-size: 1.6rem;
+	line-height: 1.5;
+	font-weight: bold;
+	display: table-cell;
+	vertical-align: top;
+	padding-right: 30px;
+}
+.ppContents .contactBox .txtarea {
+	display: table-cell;
+	vertical-align: top;
+	padding-left: 30px;
+	background: url(../img/line_y_03.gif) repeat-y left top;
+}
+.ppContents .contactBox .txtarea p {font-size: 1.3rem;}
+
+
+
+
+
+/* free11 (./tour/) --------------------------------------------------------------------- */
+
+.tourCopy {
+	margin-top: 66px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+.tourCopy h2 {
+	font-size: 3.2rem;
+	line-height: 1.531;
+	margin-bottom: 17px;
+}
+.tourCopy p {
+	font-size: 1.3rem;
+	line-height: 2;
+	color: #555;
+}
+.tourList {
+	list-style: none;
+	display: block;
+}
+.tourList li {
+	width: 48%;
+	float: left;
+	margin-bottom: 30px;
+}
+.tourList li:nth-child(2n) {float: right;}
+.tourList li figure img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.tourList li figcaption h3 {
+	font-size: 2.2rem;
+	line-height: 1;
+	color: #9b2020;
+	margin-top: 20px;
+	margin-bottom: 9px;
+}
+.tourList li figcaption h3 span {
+	font-size: 1.2rem;
+	color: #454545;
+	margin-left: 10px;
+	font-weight: bold;
+}
+.tourList li figcaption p {
+	font-size: 1.4rem;
+	line-height: 1.64;
+	color: #555555;
+}
+.tourRev {
+	margin-top: 60px;
+	text-align: center;
+	overflow: hidden !important;
+}
+.tourRev h3 {
+	font-size: 2.8rem;
+	color: #333333;
+	margin-bottom: 23px;
+}
+.tourRev h3 span {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-left: 10px;
+}
+.tourRev .txt {
+	font-size: 1.4rem;
+	line-height: 1.714;
+}
+.tourRev ul {
+	background: #fff;
+	display: block;
+	width: 150px;
+	list-style: none;
+}
+.tourContact {
+	margin-top: 30px;
+	padding: 50px 0;
+	position: relative;
+}
+.tourSlideBlock {
+	height: 298px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+#tourSlider {
+	width: 100%;
+	overflow: hidden !important;
+}
+#tourSlider li {
+	width: 540px;
+	float: left;
+}
+.tourContact .tourContactBody {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 40px;
+	text-align: center;
+	background: #fff;
+	position: relative;
+	border-radius: 2px;
+	z-index: 10;
+}
+.tourContact .tourContactBody ul {
+	width: 100%;
+	list-style: none;
+	display: table;
+	border-left: 1px solid #d1d1d1;
+}
+.tourContact .tourContactBody li {
+	width: 50%;
+	display: table-cell;
+	border-right: 1px solid #d1d1d1;
+	padding: 10px 0;
+}
+.tourContact .tourContactBody li h4 {
+	font-size: 1.6rem;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.tourContact .tourContactBody li .tel {
+	font-size: 4.6rem;
+	font-weight: bold;
+	font-style: italic;
+	margin-bottom: 20px;
+}
+.tourContact .tourContactBody li .tel::before {
+	content: "";
+	width: 24px;
+	height: 30px;
+	background: url(../../tour/images/icon_tel.png) no-repeat left top;
+	display: inline-block;
+	position: relative;
+	left: -7px;
+}
+.tourContact .tourContactBody li .tel a {
+	pointer-events: none;
+	text-decoration: none;
+	color: #496915;
+}
+.tourContact .tourContactBody li .minCopy {font-size: 1.4rem;}
+.tourContact .tourContactBody li .more {margin: 0 50px;}
+.tourContact .tourContactBody li .more a {
+	background: #9b2020;
+	font-size: 1.4rem;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	font-weight: bold;
+	padding: 24px 0;
+	border-radius: 2px;
+	position: relative;
+}
+.tourContact .tourContactBody li .more a::after {
+	content: "";
+	width: 20px;
+	height: 7px;
+	background: url(../images/icon_link_01.png) no-repeat left top;
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	margin-top: -4px;
+}
+.tourContact .tourContactBody li .more a:hover {background: #8d1b1b;}
+.tourContact .tourContactBody li .more a:hover::after {right: 10px;}
+
+
+
+/* パンフレット案内 (./pamphlet) --------------------------------------------------------------------- */
+.pantable table{
+	margin: 0;
+	padding: 0;
+	clear: both;
+	width: 100%;
+}
+.pantable table th{ width:auto; padding: 10px; text-align:center;}
+.pantable table td{	width:auto; padding: 10px; text-align:center;}
+.ctcenter{text-align: left;}
+
+/* よくある質問 (./faq) --------------------------------------------------------------------- */
+.faqtable table{
+	margin: 0 auto;
+	padding: 0;
+	clear: both;
+	width: 95%;
+}
+.faqtable table td{	width:auto; padding: 10px;}
+.faqtable h2{
+	text-align: center;
+	display: block;
+	clear: both;
+	padding:30px 0 0 0;
+	font-size: 2em;
+	color: #900;
+}
+
+
+
+/* ========================================================================
+
+	Tablet Styling
+	
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+@media screen and (max-width: 1020px) {
+/* ===================================================================== */
+
+/* トップ (./) --------------------------------------------------------------------- */
+
+#HEADER.top .copybox {
+	position: absolute;
+	top: 105px;
+	right: 10vw;
+	z-index: 9000;
+}
+
+/* halfBlock */
+.halfBlock ul li a div.txtBlock div h2 {font-size: 2.8rem;}
+.halfBlock ul li a div.txtBlock div .txt {font-size: 1.3rem;}
+
+/* 3links */
+.linkBlock {padding: 30px 30px;}
+.linkBlock ul {margin: 0 auto;}
+.linkBlock ul li a figure img {
+	width: 100%;
+	height: auto;
+}
+.linkBlock ul li a:hover h2 {background: url(../icon_07.png) no-repeat 10px center;}
+.linkBlock ul li a h2 {
+	font-size: 1.8rem;
+	margin: 15px 0 0 0;
+}
+.linkBlock ul li a span {font-size: 1rem;}
+
+/* banner */
+.bannerContents {
+	width: auto;
+	padding: 40px 40px 30px 40px;
+	border-bottom: 1px solid #e2e1e1;
+}
+.bannerBlock {
+	padding: 0;
+	border-bottom: none;
+}
+.bannerBlock .sp-mask {
+	padding-right: 6px;
+	padding-bottom: 6px;
+}
+
+/* news */
+.newsBlock {min-height: auto;}
+.newsBlock h2 {
+	float: none;
+	background: none;
+	width: auto;
+	height: auto;
+	font-size: 2.6rem;
+	text-align: center;
+	margin: 0 0 25px 0;
+}
+.newsBlock h2 span {padding: 0;}
+
+/* news list */
+.newsBlock .topNewsList {
+	max-width: inherit;
+	width: auto;
+	margin: 0 20px;
+	float: none;
+}
+
+/* news read more */
+.newsBlock .readMore {
+	position: static;
+	margin-top: 25px;
+}
+.newsBlock .readMore a {
+	width: 40%;
+	height: auto;
+	background: #9b2020;
+	display: block;
+	font-size: 1.4rem;
+	font-weight: bold;
+	color: #fff;
+	padding: 25px 0;
+	margin: 0 auto;
+	text-decoration: none;
+	border-radius: 2px;
+}
+.newsBlock .readMore a:hover {background: #8d1b1b;}
+.newsBlock .readMore a span {padding: 0;}
+
+
+
+
+
+
+/* お知らせ (./news/) --------------------------------------------------------------------- */
+
+
+/* お知らせ詳細 (./news/entry.html) --------------------------------------------------------------------- */
+
+.newsEntry .articleBody p img {max-width: 100%;}
+
+
+/* freee21 --------------------------------------------------------------------- */
+
+.demiVisual.work .box div.boxBody div {width: 70%;}
+.demiVisual.work .box div h2 img {
+	width: 80%;
+	height: auto;
+}
+.demiVisual.work .box div p {margin-top: 47px;}
+
+.demiVisual.work .box,
+.demiVisual li#work1 figure,
+.demiVisual li#work2 figure,
+.demiVisual li#work3 figure,
+.demiVisual li#work4 figure {height: 500px;}
+
+
+
+/* free22 --------------------------------------------------------------------- */
+
+.itemListBlock  {margin: 50px 0 50px 0;}
+ul.itemListBlock .titleBlock,
+ul.itemListBlock ul.itemList {
+	float: none;
+	display: block;
+}
+ul.itemListBlock .titleBlock {
+	width: 100%;
+	margin-bottom: 25px;
+}
+ul.itemListBlock .titleBlock div {
+	width: auto;
+	position: static;
+	padding-top: 0;
+}
+ul.itemListBlock .titleBlock div p {
+	text-align: center;
+	margin-top: 25px;
+	font-size: 1.3rem;
+}
+ul.itemListBlock .titleBlock div p .viewRW {
+	display: inline  !important;
+}
+ul.itemListBlock ul.itemList {width: auto;}
+ul.itemListBlock ul.itemList li {width: 49%;}
+ul.itemListBlock ul.itemList li figure {width: 35%;}
+ul.itemListBlock ul.itemList li figure img {bottom: 0;}
+ul.itemListBlock ul.itemList li div {width: 65%;}
+
+
+
+
+
+/* 商品詳細 (./lineup/xx.html) --------------------------------------------------------------------- */
+
+.itemArea {	margin: 30px auto 80px auto;}
+.itemArea .itemAreaBody {
+	width: 92%;
+	margin: 6% auto 6% auto;
+}
+.itemArea .itemAreaBody .leftArea {	width: 46%;}
+.itemArea .itemAreaBody .rightArea {width: 50%;}
+
+
+
+
+/* 会社案内 --------------------------------------------------------------------- */
+
+.historyArea {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.historyArea .obj1 {
+	left: -20px;
+	width: 60%;
+	background: url(../../about/images/obj_01.gif) no-repeat left top;
+	background-size: contain;
+}
+.historyArea .obj2 {
+	right: -20px;
+	width: 60%;
+	background: url(../../about/images/obj_02.gif) no-repeat left bottom;
+	background-size: contain;
+}
+
+/* deriveArea */
+.deriveArea section {height: 200px;}
+.deriveArea section a div {height: 200px; padding:0 10px;}
+.deriveArea section a div h3 {
+	font-size: 1.6rem;
+	margin-bottom: 15px;
+}
+.deriveArea section a div p {font-size: 1.3rem; line-height:150%;}
+.deriveArea section a div .more {
+	width: 120px;
+	margin: 20px auto 0 auto;
+	font-size: 1.2rem;
+}
+
+
+
+
+
+/* 会社案内21 --------------------------------------------------------------------- */
+
+.messageArea {padding: 0 20px 50px 20px;}
+
+/* layer obj */
+.messageArea .obj1,
+.messageArea .obj2,
+.messageArea .obj3 {
+	opacity: 0;
+	display: none;
+}
+.messageArea .obj4 {
+	opacity: 0.085;
+}
+
+
+
+/* アクセスマップ (./about/access.html) --------------------------------------------------------------------- */
+
+.googlemap {margin: 30px 0 0 0;}
+.googlemapText {margin: 20px 0 60px 0;}
+
+
+/* 購入の流れ(./about/flow.html) --------------------------------------------------------------------- */
+
+
+/* サービス案内 (./tour/) --------------------------------------------------------------------- */
+
+.tourContact {
+	text-align: center;
+	padding: 50px 30px 50px 30px;
+}
+.tourContact .tourContactBody li .tel {
+	font-size: 4rem;
+	padding-top: 5px;
+	margin-bottom: 10px;
+}
+.tourContact .tourContactBody li .tel::before {
+	background: url(../../tour/images/icon_tel.png) no-repeat left top / 20px;
+	vertical-align: middle;
+}
+.tourContact .tourContactBody li .more {margin: 0 30px;}
+
+
+/* お問い合わせ (./comtact/) --------------------------------------------------------------------- */
+
+
+/* プライバシーポリシー (./privacypolicy/) --------------------------------------------------------------------- */
+
+
+/* ===================================================================== */
+}
+/* /end Tablet ======================================================================== */
+
+
+
+
+
+
+
+/* ========================================================================
+
+	SmartPhone Styling
+	
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+@media screen and (max-width: 750px) {
+/* ===================================================================== */
+/* --------------------------------------------------------------------- */
+/* トップ (./) */
+/* --------------------------------------------------------------------- */
+
+.spNone { display: none;}/*非表示*/
+.imgresize{ width: 70%;}
+.imgresize100{ width: 30px;}
+
+#HEADER.top .copybox {
+	width: 100%;
+	height: 100%;
+	right: 0;
+	top: 0;
+}
+#HEADER.top .copybox .mainCopy {
+	width: 84%;
+	max-width: 400px;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin: 0 auto 0 auto;
+}
+#HEADER.top .copybox .mainCopy img {
+	width: 100%;
+	display: block;
+	height: auto;
+	max-width: inherit;
+	position: relative;
+}
+#HEADER.top .copybox .sub {width: 50px;}
+
+/* halfBlock */
+.halfBlock ul li a div.txtBlock,
+.halfBlock ul li a figure {	height: 160px;}
+.halfBlock ul li a div.txtBlock div h2 {
+	margin-bottom: 8px;
+	font-size: 1.8rem;
+}
+.halfBlock ul li a div.txtBlock div .txt {
+	margin-bottom: 10px;
+	font-size: 1rem;
+	line-height: 1.65;
+	margin: 0 10px 10px 10px;
+}
+.halfBlock ul li a div.txtBlock div .txt br {display: none;}
+.halfBlock ul li a div.txtBlock div .more {
+	width: 50%;
+	font-size: 1rem;
+	padding: 10px 0;
+}
+.halfBlock ul li a div.txtBlock div .more::after {display: none;}
+.halfBlock ul li a figure {pointer-events: auto;}
+
+/* 3links */
+.linkBlock {padding: 20px;}
+.linkBlock ul {
+	background: #fff;
+	border-radius: 6px;
+	border-bottom: 1px solid #e1e1e0;
+}
+.linkBlock ul li {
+	float: none;
+	width: 100%;
+	border-bottom: 1px solid #e1e1e0;
+}
+.linkBlock ul li:last-child {border: none;}
+.linkBlock ul li:nth-child(2) {margin: 0;}
+.linkBlock ul li a {padding: 10px;}
+
+.linkBlock ul li a figure,
+.linkBlock ul li a h2 {
+	display: table-cell;
+	vertical-align: middle;
+}
+.linkBlock ul li a figure {width: 30%;}
+.linkBlock ul li a figure img {
+	width: 100%;
+	height: auto;
+}
+.linkBlock ul li a:hover h2 {background: url(../icon_07.png) no-repeat right center;}
+
+.linkBlock ul li a h2 {
+	font-size: 1.6rem;
+	width: 70%;
+	padding-left: 15px;
+	background: url(../images/icon_07.png) no-repeat right center;
+}
+.linkBlock ul li a span {
+	position: static;
+	margin-left: 10px;
+	font-size: 1.2rem;
+}
+
+/* banner */
+.bannerContents {padding: 25px 26px 25px 20px;}
+
+/* news */
+.newsBlock {
+	width: auto;
+	margin: 50px 15px 40px 15px;
+}
+.newsBlock h2 {	margin: 0 0 20px 0;}
+
+/* news list */
+.newsBlock .topNewsList {margin: 0;}
+
+.newsBlock .topNewsList li a p.time {
+	width: auto;
+	font-size: 1.1rem;
+	line-height: 1;
+	vertical-align: middle;
+}
+.newsBlock .topNewsList li a p.category {
+	width: auto;
+	margin: 0 0 0 10px;
+}
+.newsBlock .topNewsList li a p.category span {
+	padding: 7px 6px 6px 6px;
+	font-size: 1rem;
+	line-height: 1;
+	vertical-align: middle;
+}
+.newsBlock .topNewsList li a p.title {
+	width: 95%;
+	display: block !important;
+	margin-top: 10px;
+	font-size: 1.3rem;
+}
+
+/* news read more */
+.newsBlock .readMore a {
+	width: 100%;
+	margin: 0 0;
+}
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* お知らせ (./news/) */
+/* --------------------------------------------------------------------- */
+
+/* news select */
+.newsNav {
+	display: block;
+	text-align: center;
+}
+.newsNav li {
+	display: block;
+	float: none;
+	background: none;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+}
+.newsNav li:last-child {margin: 0 0 10px 0;}
+.newsNav li p {
+	display: block;
+	padding: 0 0 0 0;
+	margin-bottom: 10px;
+}
+.newsNav li select {
+	width: 80%;
+	display: block;
+	margin: 0 auto;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #e0e0e0;
+	border-radius: 0;
+	background-color: inherit;
+}
+
+/* news list */
+.newsList li a {padding: 20px 0;}
+.newsList li a:hover {padding-left: 0;}
+.newsList li a p.time {
+	width: auto;
+	font-size: 1.1rem;
+	line-height: 1;
+	vertical-align: middle;
+}
+.newsList li a p.category {
+	width: auto;
+	font-size: 1rem;
+	line-height: 1;
+	vertical-align: middle;
+	margin: 0 0 0 10px;
+}
+.newsList li a p.category span {padding: 6px 6px;}
+.newsList li a p.title {
+	width: 95%;
+	display: block !important;
+	margin-top: 10px;
+	font-size: 1.3rem;
+}
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* お知らせ詳細 (./news/entry.html) */
+/* --------------------------------------------------------------------- */
+
+.newsEntry {padding: 25px;}
+.newsEntry header h1 {
+	margin-top: 10px;
+	font-size: 2.4rem;
+}
+.newsEntry .articleBody p {
+	font-size: 1.5rem;
+	line-height: 1.8;
+}
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* コンテンツ*/
+/* --------------------------------------------------------------------- */
+
+.demiVisual.work .box {
+	margin-bottom: 35px;
+	height: auto;
+}
+.demiVisual.work .box div.boxBody {
+	width: auto;
+	padding: 0 20px;
+	display: table;
+}
+.demiVisual.work .box div.boxBody div {width: auto;}
+.demiVisual.work .box div h2 {
+	width: 20%;
+	position: relative;
+	margin-top: -25px;
+	left: 5px;
+}
+.demiVisual.work .box div h2 img {
+	width: 80%;
+	max-width: 40px;
+	height: auto;
+}
+.demiVisual.work .box div p {
+	width: 80%;
+	margin-top: 20px;
+}
+
+.demiVisual li#work1 figure,
+.demiVisual li#work2 figure,
+.demiVisual li#work3 figure,
+.demiVisual li#work4 figure {height: 250px;}
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* 商品紹介 (./lineup/) */
+/* --------------------------------------------------------------------- */
+
+.itemListBlock  {margin: 40px 0 50px 0;}
+ul.itemListBlock .titleBlock,
+ul.itemListBlock ul.itemList {
+	float: none;
+	display: block;
+}
+ul.itemListBlock .titleBlock {
+	width: 100%;
+	margin-bottom: 35px;
+}
+ul.itemListBlock .titleBlock div {
+	width: auto;
+	position: static;
+	padding-top: 0;
+}
+ul.itemListBlock .titleBlock div h2 {
+	display: inline-block;
+	margin: 0 auto;
+}
+ul.itemListBlock .titleBlock div h2 img {
+	width: 25%;
+	height: auto;
+}
+ul.itemListBlock .titleBlock div p {
+	text-align: center;
+	margin-top: 25px;
+}
+ul.itemListBlock .titleBlock div p .viewRW {
+	display: inline  !important;
+}
+ul.itemListBlock ul.itemList {width: auto;}
+ul.itemListBlock ul.itemList li {
+	width: 100%;
+	float: none;
+}
+ul.itemListBlock ul.itemList li:nth-child(2n) {
+	float: none;
+}
+ul.itemListBlock ul.itemList li figure {
+	width: 25%;
+	text-align: center;
+}
+ul.itemListBlock ul.itemList li figure.large img {
+	max-width: 60px;
+}
+ul.itemListBlock ul.itemList li figure img {
+	max-width: 40px;
+	width: 100%;
+	height: auto;
+	left: -10px;
+}
+ul.itemListBlock ul.itemList li div {width: 75%;}
+ul.itemListBlock ul.itemList li div .name {	font-size: 1.8rem;}
+ul.itemListBlock ul.itemList li div .sub {
+	margin-top: 7px;
+	margin-bottom: 6px;
+}
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* 商品詳細 (./lineup/xx.html) */
+/* --------------------------------------------------------------------- */
+
+.itemArea {	margin: 30px auto 40px auto;}
+.itemArea .itemAreaBody {
+	width: auto;
+	margin: 6% 20px 7% 20px;
+}
+.itemArea .itemAreaBody .leftArea {
+	float: none;
+	width: auto;
+}
+.itemArea .itemAreaBody .rightArea {
+	float: none;
+	width: auto;
+}
+
+/* header */
+.itemArea header {margin-bottom: 10px;}
+.itemArea header .category {
+	margin-bottom: 15px;
+	font-size: 1.4rem;
+}
+.itemArea header h1 {
+	font-size: 3rem;
+	margin-bottom: 10px;
+}
+
+/* contents */
+.itemArea .textBlock h2 {
+	font-size: 1.3rem;
+	line-height: 1.75;
+}
+.itemArea .textBlock p {
+	font-size: 1.3rem;
+	line-height: 1.75;
+}
+.itemArea .detailBlock {margin-top: 15px;}
+.itemArea .priceBlock {margin-top: 30px;}
+.itemArea .priceBlock ul li .price span {font-size: 1rem;}
+
+/* footer */
+.itemArea footer p {padding-top: 30px;}
+.itemArea footer a {padding: 20px 0;}
+
+
+
+
+
+/* 会社概要 (./about/) --------------------------------------------------------------------- */
+
+.historyArea {
+	padding-top: 30px;
+	padding-bottom: 20px;
+	margin-bottom: 0;
+	background: none;
+}
+.historyArea .minCopy {
+	font-size: 1rem;
+	margin-bottom: 10px;
+}
+.historyArea h2 {
+	font-size: 1.7rem;
+	margin-bottom: 13px;
+}
+.historyArea .txt {
+	font-size: 1.3rem;
+	line-height: 2;
+	text-align: left;
+	margin-bottom: 13px;
+}
+.historyArea .txt br {display: none;}
+.historyArea .obj1 {display: none;}
+.historyArea .obj2 {display: none;}
+
+/* deriveArea */
+.deriveArea {
+	width: auto;
+	padding: 3px 2px;
+}
+.deriveArea .fx {flex-direction: column;}
+.deriveArea .fx section {width: auto;}
+.deriveArea section {
+	width: auto;
+	height: 160px;
+}
+.deriveArea section a div {	height: 160px;}
+.deriveArea section a div h3 {
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+.deriveArea section a div p {font-size: 1.2rem;}
+.deriveArea section a div .more {
+	width: 100px;
+	padding: 10px 0;
+	margin: 15px auto 0 auto;
+	font-size: 1rem;
+}
+.deriveArea section a div .more::after {display: none;}
+.deriveArea section.d2 {
+	background: url(../../about/images/dev_02.jpg) no-repeat center -2em;
+	background-size: cover;
+}
+
+
+
+
+.visual {margin: 30px 0 30px 0;}
+.visual img {max-width: 100%;}
+.companyBox {padding: 0 0 30px 0;}
+.companyBox.dk {padding: 30px 0 50px 0;}
+.companyBox table.typeB {width: 100%;}
+.companyBox table {float: none;}
+.companyBox table:last-child {float: none;}
+.companyBox table.typeB:last-child {border-top: 0;}
+
+.companyBox table th,
+.companyBox table td {font-size: 1.2rem;}
+.companyBox table th {padding: 10px 0 10px 0;}
+.companyBox table th span {
+	display: block;
+	text-indent: -0.5em;
+}
+.companyBox table td {padding: 13px 0 13px 0;}
+.companyBox table td ul li {
+	font-size: 1.2rem;
+	padding: 0 0 13px 0;
+	margin: 0 0 13px 0;
+}
+
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* 採用情報 */
+/* --------------------------------------------------------------------- */
+
+.companyBox table.typeB th {
+	text-indent:0;
+	color: #914f4f;
+	margin: 0px;
+	padding: 10px;
+	width: 30%;
+}
+/*------------------------------------------------------------*/
+.messageArea h2 {
+	font-size: 2.8rem;
+	padding-top: 30px;
+	margin-bottom: 15px;
+}
+.messageArea p {
+	font-size: 1.4rem;
+	line-height: 1.85;
+	margin-bottom: 15px;
+	text-align: left;
+}
+.messageArea p br {display: none;}
+.messageArea p.photo {
+	width: 100px;
+	height: auto;
+	margin: 7px auto 15px auto;
+}
+.messageArea p.photo img {height: auto;}
+.messageArea p.name {text-align: center;}
+
+/* layer obj */
+.messageArea .obj4 {
+	opacity: 0;
+	display: none;
+}
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* アクセスマップ (./about/access.html) */
+/* --------------------------------------------------------------------- */
+
+#map_canvas {padding-bottom: 50%;}
+.googlemapText {margin-bottom: 40px;}
+.googlemapText .glink {
+	position: static;
+	width: auto;
+	margin-top: 20px;
+}
+.googlemapText .glink a {
+	display: block;
+	background: #9b2020;
+	color :#fff;
+	text-decoration: none;
+	text-align: center;
+	padding: 25px 0;
+	font-size: 1.4rem;
+	font-weight: bold;
+	border-radius: 2px;
+}
+.googlemapText .glink a:hover {
+	padding-left: 0;
+	color: #fff;
+	background: #8d1b1b;
+}
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* その他 */
+/* --------------------------------------------------------------------- */
+
+.flowNav {
+	margin-top: 32px;
+	margin-bottom: 40px;
+	padding: 0 15px;
+}
+.flowNav h2 {
+	font-size: 2.2rem;
+	margin-bottom: 10px;
+}
+.flowNav .copy br {display: none;}
+
+.flowNav ol,
+.flowNav ul {margin: 20px auto 0 auto;}
+.flowNav li a img {
+	width: 100%;
+
+	max-width: 62px;
+	height: auto;
+}
+
+.demiVisual {
+	border-top: none;
+	margin-bottom: 50px;
+}
+.demiVisual li .box,
+.demiVisual li:nth-child(2n) figure {float: none;}
+
+.demiVisual li figure,
+.demiVisual li:nth-child(2n) .box {	float: none;}
+
+.demiVisual.flow li .box {padding-top: 35px;}
+.demiVisual.flow li .box div {height: auto;}
+.demiVisual.flow li .box div h2 {
+	max-width: 48px;
+	margin: 0 auto;
+}
+.demiVisual.flow li .box div h2 img {
+	width: 50%;
+	height: auto;
+	display: block;
+}
+.demiVisual.flow li .box p {
+	width: auto;
+	font-size: 1.3rem;
+	line-height: 1.75;
+	margin: 25px auto 20px auto;
+	padding: 0 20px 0 20px;
+}
+.demiVisual.flow li .box p::before {
+	display: none;
+	width: 30px;
+	margin: 0 auto 10px auto;
+}
+.demiVisual li .box,
+.demiVisual li figure {	width: auto;}
+.demiVisual li#flow1 figure,
+.demiVisual li#flow2 figure,
+.demiVisual li#flow3 figure,
+.demiVisual li#flow4 figure,
+.demiVisual li#flow5 figure,
+.demiVisual li#flow6 figure {height: 300px;}
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* お問い合わせ (./comtact/) */
+/* --------------------------------------------------------------------- */
+
+#contactForm select {
+	width: 100%;
+	height: 50px;
+}
+#contactForm {
+	margin-top: 30px;
+	border-top: 1px solid #d5d5d5;
+}
+#contactForm table {border-top: none;}
+#contactForm table th,
+#contactForm table td {
+	float: left;
+	clear: both;
+	display: block;
+	border-bottom: none;
+}
+#contactForm table th {
+	width: 100%;
+	padding: 0;
+	margin-bottom: 15px;
+}
+#contactForm table td {
+	width: 100%;
+	padding: 0;
+	margin-bottom: 25px;
+}
+#contactForm table th p {top: 0;}
+#contactForm .submit {margin-top: 5px;}
+#contactForm button {width: 100%;}
+
+/* check */
+#contactForm.form_check th p {
+	color: #555;
+	font-size: 1rem;
+}
+#contactForm.form_check th {margin-bottom: 5px;}
+#contactForm.form_check td {
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px dotted #d5d5d5;
+}
+
+/* result */
+#result {
+	width: auto;
+	margin: 0 auto;
+	padding: 40px 0;
+}
+#result h2 {line-height: 1.5;}
+#result .copy {line-height: 1.65;}
+#result .submit {margin-top: 25px;}
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* プライバシーポリシー (./privacypolicy/) */
+/* --------------------------------------------------------------------- */
+
+.ppContents ul.ppList > li {margin-bottom: 30px;}
+.ppContents section h2 {font-size: 1.6rem;}
+.ppTxt,
+.ppContents section p,
+.ppContents ul.ppList > li li {font-size: 1.3rem;}
+.ppContents .contactBox {padding: 20px;}
+.ppContents .contactBox h3 {
+	display: block;
+	padding: 0;
+	margin-bottom: 10px;
+}
+.ppContents .contactBox h3 br {display: none;}
+.ppContents .contactBox .txtarea {
+	display: block;
+	background: none;
+	padding: 0;
+}
+
+
+
+
+
+/* free51 --------------------------------------------------------------------- */
+
+.tourCopy {	margin: 30px 20px 30px 20px;}
+.tourCopy h2 {
+	font-size: 2.2rem;
+	margin-bottom: 10px;
+}
+.tourCopy p br {display: none;}
+.tourList li figcaption h3 {font-size: 1.6rem;}
+.tourList li figcaption h3 span {
+	font-size: 1rem;
+	margin-left: 5px;
+}
+.tourList li figcaption p {	font-size: 1.2rem;}
+.tourList li {
+	width: 100%;
+	float:none;
+	margin-bottom: 30px;
+}
+.tourRev h3 {
+	font-size: 2.4rem;
+	margin-bottom: 15px;
+}
+.tourRev .txt {
+	margin: 0 20px;
+	font-size: 1.3rem;
+}
+.tourContact {
+	margin-top: 20px;
+	padding: 27px;
+}
+.tourContact .tourContactBody {
+	padding: 30px;
+	border-radius: 4px;
+}
+.tourContact .tourContactBody ul {
+	border-left: none;
+	display: block;
+}
+.tourContact .tourContactBody li {
+	width: auto;
+	display: block;
+	border-right: none;
+	border-bottom: 1px solid #d1d1d1;
+	padding: 0 0 30px 0;
+}
+.tourContact .tourContactBody li:last-child {
+	padding: 25px 0 0 0;
+	border-bottom: none;
+}
+.tourContact .tourContactBody li h4 {margin-bottom: 15px;}
+.tourContact .tourContactBody li .tel {	margin: 0 auto;}
+.tourContact .tourContactBody li .tel::before {	display: none;}
+.tourContact .tourContactBody li .tel a {
+	background: #9b2020;
+	font-size: 2.4rem;
+	line-height: 1;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	font-weight: bold;
+	padding: 18px 0;
+	border-radius: 2px;
+	position: relative;
+	pointer-events: auto;
+}
+.tourContact .tourContactBody li .minCopy {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.tourContact .tourContactBody li .more {margin: 0 auto;}
+.tourContact .tourContactBody li .tel a::after,
+.tourContact .tourContactBody li .more a::after {
+	content: "";
+	width: 20px;
+	height: 7px;
+	background: url(../images/icon_link_01.png) no-repeat left top;
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	margin-top: -4px;
+}
+.tourContact .tourContactBody li .tel a:hover,
+.tourContact .tourContactBody li .more a:hover {background: #8d1b1b;}
+
+.tourContact .tourContactBody li .tel a:hover::after,
+.tourContact .tourContactBody li .more a:hover::after {	right: 10px;}
+.tourSlideBlock {height: 380px;}
+#tourSlider li {
+	width: 600px !important;
+	height: 380px !important;;
+}
+#tourSlider li img {
+	width: auto;
+	height: 380px;
+}
+
+
+
+
+
+/* ===================================================================== */
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ /end smartphone
+======================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================================================
+
+	TRANSITION
+
+======================================================================== */
+
+.wrapper,
+
+#HEADER,
+#HEADER.work::after,
+#HEADER.about::after,
+#HEADER .pageTitle,
+#HEADER.mv .pageTitle .title,
+#HEADER.derivation .pageTitle .root a,
+
+#switch div,
+#globalNav,
+#globalNav ul,
+#globalNav::after,
+#globalNav ul li.onlineStore p a,
+#globalNav ul li:after,
+#globalNav .logo,
+#globalNav .logo img,
+#globalNav_rw .logo,
+#globalNav_rw .logo img,
+#globalNav_rw ul li a span::after,
+#globalNav_rw .onlineLink img,
+#globalNav_rw .onlineLink,
+#globalNav_rw .footer .fb a,
+
+#CONTENTS .contentsBody,
+
+#FOOTER .rwInfo *,
+#FOOTER .pageTop a::after,
+#FOOTER .menu ul li a,
+#FOOTER .other .right .fb a {
+	-webkit-transition: all 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+	-moz-transition: all 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+	-ms-transition: all 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+	-o-transition: all 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+	transition: all 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+
+.rwd #globalNav_rw .layerBody {
+	-webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	-moz-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	-ms-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	-o-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+
+
+
+
+/* ===================================================================== */
+@media screen and (max-width: 750px) {
+/* ===================================================================== */
+
+.mainvisual_vision .textArea {
+	-webkit-transition: all 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition:         all 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+
+
+
+
+/* ===================================================================== */
+}
+/* ===================================================================== */

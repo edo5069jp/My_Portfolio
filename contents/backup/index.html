@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no,minimum-scale=1,maximum-scale=1">
+<meta name="description" content="架空サイトです。">
+<meta name="keywords" content="ポートフォリオ,架空サイト">
+<title></title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script>
+	$(function(){
+		// ページ内ジャンプ設定ここから
+		$(".menu-click-a").click(function(){
+			var targetTop = $("#main-menu").offset().top;
+			$('html,body').animate({
+				scrollTop: targetTop
+			}, 500);
+		});
+		$(".menu-click-b").click(function(){
+			var targetTop = $("#policy-title").offset().top;
+			$('html,body').animate({
+				scrollTop: targetTop
+			}, 500);
+		});
+		$(".menu-click-c").click(function(){
+			var targetTop = $("#access-title").offset().top;
+			$('html,body').animate({
+				scrollTop: targetTop
+			}, 500);
+		});
+		$("#footer-logo img").click(function(){
+			var targetTop = $("html,body").offset().top;
+			$('html,body').animate({
+				scrollTop: targetTop
+			}, 500);
+		});
+		// ページ内ジャンプ設定ここまで
+		// トップへのボタン設定ここから
+		var pagetop = $('#page-top');   
+		pagetop.hide();
+		$(window).scroll(function () {
+		if ($(this).scrollTop() > 600) {
+			pagetop.fadeIn(400);
+		} else {
+			pagetop.fadeOut(400);
+		}
+		});
+
+		$("#page-top").click(function(){
+			var targetTop = $("html,body").offset().top;
+			$('html,body').animate({
+				scrollTop: targetTop
+			}, 500);
+		});
+		// トップへのボタン設定ここまで
+		// ハンバーガーメニュー設定ここから
+		$('#hamburger-menu').click(function(){
+		$('#hamburger-menu').toggleClass('active');
+		$('#hamburger-menu span').toggleClass('active');
+		$('nav').slideToggle('open');
+		});
+		// ハンバーガーメニュー設定ここまで
+	});
+</script>
+</head>
+
+
+<body>
+	<header>
+		<div id="head-wrapper">
+			<!-- ナビここから -->
+			<div id="hamburger-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<img class="menu-click-a" src="image/menu_01.png" alt="お品書き">
+					</li>
+					<li>
+						<img class="menu-click-b" src="image/menu_02.png" alt="こだわり">
+					</li>
+					<li>
+						<img class="menu-click-c" src="image/menu_03.png" alt="道案内">
+					</li>
+				</ul>
+			</nav>
+			<div id="page-top">
+				<img src="image/top_button_01.png" alt="ページトップへ">
+				<span>トップへ</span>
+			</div>
+			<!-- ナビここまで -->
+			<!-- ヘッダー設定ここから -->
+			<div id="head-image">
+				<a href="index.html">
+				<img src="image/logo_02.png" alt="宇部とんこつラーメン なべしま店ロゴ">
+				</a>
+			</div>
+			<div id="sns-logo">
+				<a href="" target="_blank">
+				<img src="image/twitter.png" alt="twitterロゴ">
+				</a>
+				<a href="" target="_blank">
+				<img src="image/instagram.png" alt="instagramロゴ">
+				</a>
+				<a href="" target="_blank">
+				<img src="image/facebook.png" alt="facebookロゴ">
+				</a>
+			</div>
+			<div id="head-menu">
+				<ul>
+					<li>
+						<img class="menu-click-a" src="image/menu_01.png" alt="お品書き">
+					</li>
+					<li>
+						<img class="menu-click-b" src="image/menu_02.png" alt="こだわり">
+					</li>
+					<li>
+						<img class="menu-click-c" src="image/menu_03.png" alt="道案内">
+					</li>
+				</ul>
+			</div>
+			<div class="boxsize">
+				<div class="inner in">
+			        <p>1 : 1</p>
+			    </div>
+			</div>
+		</div>
+	</header>
+	<!-- ヘッダー設定ここまで -->
+	<!-- メニュー設定ここから -->
+	<div id="main-menu">
+		<h2>メニュー<span>Menu</span></h2>
+		<div id="main-a">
+			<img src="image/main_04.png" alt="なべしまラーメン">
+			<p class="radius">こってりとんこつ<br><span>なべしま<br>ラーメン</span>
+			<span class="yen"><br><strong>880円</strong></span>
+			</p>
+			<div class="reccomend">
+				当店<br>おすすめ
+			</div>
+		</div>
+		<div id="main-b">
+			<img src="image/main_05.png" alt="チキンバターラーメン">
+			<p class="radius">とんこつ＆バター<br><span class='long-text'>チキン<br>バター<br>ラーメン</span>
+			<span class="yen"><br>1080円</span>
+			</p>
+		</div>
+		<div id="main-c">
+			<img src="image/main_06.png" alt="担々麺">
+			<p class="radius">あっさりとんこつ<br><span>ピリ辛<br>担々麺</span>
+			<span class="yen"><br>780円</span>
+			</p>
+		</div>
+		<!-- メニュー設定ここまで -->
+		<!-- サイドメニュー設定ここから -->
+		<h2>サイドメニュー<span>Side Menu</span></h2>
+		<div id="side-a">
+			<dl>
+				<div class="side-container">
+					<dt>
+						<img src="image/sub_01.png" alt="チャーハン">
+					</dt>
+					<dd>
+						<p>チキン炒飯</p>
+						<p class="yen">380円</p>
+					</dd>
+				</div>
+				<div class="side-container">
+					<dt>
+						<img src="image/sub_02.png" alt="チャーシュー丼">
+					</dt>
+					<dd>
+						<p>チャーシュー丼</p>
+						<p class="yen">460円</p>
+					</dd>
+				</div>
+				<div class="side-container">
+					<dt>
+						<img src="image/sub_03.png" alt="餃子５ヶ">
+					</dt>
+					<dd>
+						<p>パリ皮餃子(5ヶ)</p>
+						<p class="yen">280円</p>
+					</dd>
+				</div>
+			</dl>
+		</div>
+		<div id="side-b">
+			<dl>
+				<div class="side-container">
+					<dt>
+						<img src="image/sub_04.png" alt="ミニ醤油ラーメン">
+					</dt>
+					<dd>
+						<p>ミニ醤油ラーメン</p>
+						<p class="yen">420円</p>
+					</dd>
+				</div>
+				<div class="side-container">
+					<dt>
+						<img src="image/sub_05.png" alt="半熟卵半玉２個">
+					</dt>
+					<dd>
+						<p>半熟味付玉子(半玉2個)</p>
+						<p class="yen">90円</p>
+					</dd>
+				</div>
+				<div class="side-container">
+				<dt>
+					<img src="image/sub_06.png" alt="替え玉一玉">
+				</dt>
+				<dd>
+					<p>替え玉(1玉)</p>
+					<p class="yen">100円</p>
+				</dd>
+				</div>
+			</dl>
+		</div>
+		<!-- サイドメニュー設定ここまで -->
+		<!-- ドリンク設定ここから -->
+		<h2>お飲み物<span>Drink</span></h2>
+		<div id="drink">
+			<ul>
+				<li>生ビール(350ml)</li>
+				<li>瓶ビール</li>
+				<li>ノンアルコールビール</li>
+				<li>コーラ</li>
+			</ul>
+			<ul>
+				<li>450円</li>
+				<li>580円</li>
+				<li>400円</li>
+				<li>220円</li>
+			</ul>	
+		</div>
+		<p id="tax">※料金はすべて税込み価格です。</p>
+	</div>
+	<!-- ドリンク設定ここまで -->
+	<!-- ポリシー設定ここから -->
+	<div id="policy-title">
+		<h2>こだわり<span>Policy</span></h2>
+	</div>
+	<div id="policy">
+		<div id="policy-a">
+			<div class="policy-text-background">
+				<h3>コシのある自家製麺</h3>
+				<p>ラーメンのおいしさの一つである『食感』を大事にした自家製麺。
+				小麦粉の香りとほんのりとした甘さを逃がさず、
+				スープのしみ込み具合も考慮した上でコシのある麺に。<br>
+				『調和』と『食感』に配慮した当店自慢の麺です。</p>
+			</div>
+		</div>
+		<div id="policy-b">
+			<div class="policy-text-background">
+				<h3>主張ひかえめ、こってりスープ</h3>
+				<p>「食後に後を引くようなとんこつスープにはしたくない」
+				その一心で、豚骨からダシを取る過程にこだわりました。
+				臭みを出さず、かつギトギトしたスープにならない様、
+				厳選した100%国産の豚骨を弱火で長時間煮込み、
+				嫌味のないうま味を抽出した『バランス』にこだわったスープです。</p>
+			</div>
+		</div>
+		<div id="policy-c">
+			<div class="policy-text-background">
+				<h3>なべしまのラーメンは、みんなが主役</h3>
+				<p>「ネギ大盛りで」「メンマ大盛りで」「チャーシュー大盛りで」。<br>
+				麺だけでなく『具』たちも人によっては主役になる。
+				麺が無いと確かにラーメンとは言えません。しかし麺だけでなく、
+				ネギやメンマといった自分の求めた立役者が微妙では、食べ終えた後、
+				好きな役者さんのいない劇を見た感覚になってしまう。
+				なべしまでは野菜が持つ『甘み』、具が持つ『味や食感』といった持ち味にこだわりました。</p>
+			</div>
+		</div>
+	</div>
+	<!-- ポリシー設定ここまで -->
+	<!-- アクセス設定ここから -->
+	<div id="access-title">
+		<h2>店舗情報<span>Infomation & Access</span></h2>
+	</div>
+	<div id="access">
+		<div id="access-left">
+			<ul>
+				<li>[電話番号・住所]</li>
+				<li>TEL: 0000-00-0000</li>
+				<li>〒000-0000</li>
+				<li>山口県宇部市架空区架空番地-00</li>
+			</ul>
+			<ul>
+				<li>[営業時間]</li>
+				<li>昼: 11:00 ～ 14:00(最終入店 13:30)</li>
+				<li>夜: 17:00 ～ 22:00(最終入店 21:30)</li>
+			</ul>
+			<ul>
+				<li>[定休日]</li>
+				<li>毎月　第２・第４火曜日</li>
+			</ul>
+			<ul>
+				<li>[席数・駐車場]</li>
+				<li>全40席(テーブル8席、カウンター8席)</li>
+				<li>駐車場: 12台</li>
+			</ul>
+		</div>
+		<div id="access-right">
+			<ul>
+				<li>[アクセスマップ]</li>
+				<li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1967.9416082414514!2d131.28300086388663!3d33.949612508944156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35447f5f04bb95d5%3A0xf418e466d6e07ace!2z44Oa44Oq44Kr44Oz5bO2!5e0!3m2!1sja!2sjp!4v1550211213013" width="400" height="400" frameborder="0" style="border:0" allowfullscreen></iframe></li>
+			</ul>
+		</div>
+	</div>
+	<!-- アクセス設定ここまで -->
+	<!-- フッター設定ここから -->
+	<footer>
+		<div id="footer-logo">
+			<img src="image/logo_01.png" alt="宇部とんこつラーメン　なべしま店ロゴ">
+		</div>
+		<div id="sns-footer-logo">
+			<a href="" target="_blank">
+			<img src="image/twitter.png" alt="twitterロゴ">
+			</a>
+			<a href="" target="_blank">
+			<img id="sns-center" src="image/instagram.png" alt="instagramロゴ">
+			</a>
+			<a href="" target="_blank">
+			<img src="image/facebook.png" alt="facebookロゴ">
+			</a>
+		</div>
+		<p>Copyright © 2019 Ube Tonkotsu Ramen Nabeshima. All Right Reserved.</p>
+	</footer>
+	<!-- フッター設定ここまで -->
+</body>
+</html>
