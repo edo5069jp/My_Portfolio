@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+/*=============================================================
+Common Layout
+=============================================================*/
+/* reset style
+-------------------------------------------------------------*/
+* {
+	padding: 0;
+	margin: 0;
+}
+section,
+article,
+aside,
+hgroup,
+header,
+footer,
+nav,
+figure,
+figcaption,
+summary {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+ol,
+ul,
+dl,
+li,
+dt,
+dd {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+	font: normal normal 16px/1 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+	background: #ffffff;
+	text-align: left;
+}
+a,img {
+	margin: 0;
+	padding: 0;
+  color: #6A6B6E;
+	border: none;
+  text-decoration: none;
+}
+a:visited {
+  color: #6A6B6E;
+}
+img {
+  max-width: 100%;
+}
+/* text Layout
+-------------------------------------------------------------*/
+.text-bold {
+  font-weight: bold;
+}
+.text-normal {
+  font-weight: normal;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+/* block Layout
+-------------------------------------------------------------*/
+.sp-block {
+  display:none;
+}
+.sp-none {
+  display:block;
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Smartphones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+@media only screen and (max-width:767px){
+  .sp-block {
+    display: block;
+  }
+  .sp-none {
+    display: none;
+  }
+}

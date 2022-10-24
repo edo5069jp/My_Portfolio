@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<title>ダミー</title>
+<meta name="description" content="ダミー">
+<meta property="og:title" content="ダミー">
+<meta property="og:type" content="article">
+<meta property="og:url" content="ダミー">
+<meta property="og:description" content="ダミー">
+<meta property="og:image" content="ダミー">
+<meta property="og:site_name" content="ダミー">
+<link rel="stylesheet" type="text/css" href="../../shared/css/common.css">
+<link rel="stylesheet" type="text/css" href="css/contact.css">
+<script type="text/javascript" src="../../shared/js/common.js"></script>
+<script type="text/javascript" src="js/contact.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <nav class="header-nav">
+        <h1 class="header-logo"><img src="../../shared/img/logo_SDG.png" alt="SDG"></h1>
+        <ul id="navBtnTarget_js" class="header-list">
+          <li class="header-item header-item_textA text-bold sp-block"><a href="../index.html">TOP</a></li>
+          <li class="header-item header-item_textA text-bold"><a href="#">ABOUT</a></li>
+          <li class="header-item header-item_textA text-bold"><a href="#">SEMINAR</a></li>
+          <li class="header-item header-item_textA text-bold"><a href="#">NEWS</a></li>
+          <li class="header-item header-item_textA text-bold"><a href="#">COMPANY</a></li>
+        </ul>
+        <p class="header-button text-bold"><a href="index.html">お問い合わせ</a></p>
+        <button id="navBtn_js" class="nav-button">
+          <span class="nav-button_lineA"></span>
+          <span class="nav-button_lineB"></span>
+          <span class="nav-button_lineC"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main-inner">
+      <p class="topic-path"><a href="../index.html">Top</a>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;お問い合わせ</p>
+
+      <h2 class="main-textA text-bold text-center mt40 mt-sp12p">お問い合わせ</h2>
+      <div class="contact-form mt40 mt-sp10p">
+        <form id="form" action="#" method="POST">
+          <p class="text-bold contact-form_textA">
+            <label>お問い合わせ種別&nbsp;&nbsp;<span class="required">必須</span><br>
+              <div class="form-typeA_box mt16 mt-sp04p">
+                <select class="form-typeA" name="contact-type" required>
+                  <option value="">選択してください</option>
+                  <option value="dummy1">ダミー1</option>
+                  <option value="dummy2">ダミー2</option>
+                </select>
+              </div>
+            </label>
+          </p>
+          <p class="text-bold contact-form_textA mt24 mt-sp06p">
+            <label>お名前&nbsp;&nbsp;<span class="required">必須</span><br>
+              <input class="form-typeB mt16 mt-sp04p" type="text" name="fullname" required>
+            </label>
+          </p>
+          <p class="text-bold contact-form_textA mt24 mt-sp06p">
+            <label>メールアドレス<span class="contact-form_smalltext">（半角英数）</span><span class="required">必須</span><br>
+              <input id="email" class="form-typeB input-alpha-numeric mt16 mt-sp04p" type="email" name="mail" pattern="^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$" required>
+            </label>
+          </p>
+          <p class="text-bold contact-form_textA mt24 mt-sp06p">
+            <label>電話番号<span class="contact-form_smalltext">（半角数字）</span><span class="optional">必須</span><br>
+              <input id="tel" class="form-typeB mt16 mt-sp04p" type="tel" name="tel">
+            </label>
+          </p>
+          <p class="text-bold contact-form_textA mt24 mt-sp06p">
+            <label>お問い合わせ内容<span class="contact-form_smalltext">（1000文字まで）</span><span class="required">必須</span><br>
+              <textarea class="form-typeC mt16 mt-sp04p" name="Other" maxlength="1000" required></textarea>
+            </label>
+          </p>
+          <p class="mt24 mt-sp06p"><input id="button" type="submit" value="入力内容確認" disabled></p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-containerA">
+      <div class="footer-innerA">
+        <h2 class="footer-textA text-center">ニューロマジックについて</h2>
+        <ul class="footer-list mt28">
+          <li class="footer-item"><h2><img src="../../shared/img/logo.png" alt=""></h2></li>
+          <li class="footer-item footer-textB mt-sp05p">ニューロマジックは、東京を拠点とするウェブ制作とサービスデザインコンサルテイングを提供する会社です。<br class="sp-block">1994年にWEBインテグレーション領域で創業し、現在は「EXPERIENCE AGENCY」をスローガンにサービス、ブランド、コミュニケーションなど幅広いデザイン領域で事業を展開。<br class="sp-block">国内の知見だけでなく、より幅広いソリューションを提供すべく、海外拠点として2017年にニューロマジックアムステルダムも開設されました。<br class="sp-block">社会を取り巻く様々なステークホルダーの間を「ふさわしい体験の創造」で紡いでいく活動をしています。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-containerB">
+      <div class="footer-innerB text-center">
+        <small class="copyright">&copy;&nbsp;neuromagic</small>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
