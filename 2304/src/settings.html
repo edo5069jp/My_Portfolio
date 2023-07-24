@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Settings Window</title>
+</head>
+<body>
+  <h1>Settings Window</h1>
+
+  <label for="dropdown1">Dropdown 1:</label>
+  <select id="dropdown1">
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+  </select>
+
+  <label for="dropdown2">Dropdown 2:</label>
+  <select id="dropdown2">
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+  </select>
+
+  <label for="dropdown3">Dropdown 3:</label>
+  <select id="dropdown3">
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+  </select>
+
+  <button onclick="saveSettings()">Save</button>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    function saveSettings() {
+      const dropdown1 = document.getElementById('dropdown1').value;
+      const dropdown2 = document.getElementById('dropdown2').value;
+      const dropdown3 = document.getElementById('dropdown3').value;
+
+      const settings = {
+        dropdown1,
+        dropdown2,
+        dropdown3
+      };
+
+      ipcRenderer.send('save-settings', settings);
+    }
+  </script>
+</body>
+</html>
