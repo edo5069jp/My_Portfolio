@@ -7,42 +7,53 @@
   </head>
 <body>
   <div class="container" id="container">
-    ここにファイルをドラッグドロップして下さい。
+    ここにファイルまたはディレクトリをドラッグドロップして下さい。
     <ol id="list"></ol>
   </div>
 
   <div id="holder">
-    ファイルをここにドラッグ
+    ファイルまたはディレクトリをここにドラッグ
   </div>
 
   <script>
-    document.addEventListener('drop', (e) => {
+    document.addEventListener('drop', async (e) => {
       e.preventDefault();
       e.stopPropagation();
 
       let dataArray = [];
-      let listArray = [];
-      for (const f of e.dataTransfer.files) {
-        // 表示する配列のデータ（例として文字列の配列を使用）
-        dataArray.push(f.path.toString().substring(f.path.lastIndexOf("\\")+2));
+
+      async function readEntries(entry, basePath) {
+        if (entry.isDirectory) {
+          const reader = entry.createReader();
+          const entries = await new Promise((resolve) => reader.readEntries(resolve));
+          for (const subEntry of entries) {
+            await readEntries(subEntry, `${basePath}/${entry.name}`);
+          }
+        } else if (entry.isFile) {
+          dataArray.push(`${basePath}/${entry.name}`);
+        }
       }
 
-      // 配列をリストとして表示する関数
-      function displayArrayAsList() {
-          const listContainer = document.getElementById('list');
-
-          // 既存のリストをクリア
-          listContainer.innerHTML = '';
-          // 配列の要素をループしてリストアイテムを作成
-          dataArray.forEach((item) => {
-            console.log(item)
-            const listItem = document.createElement('li');
-            listItem.textContent = item;
-            listContainer.appendChild(listItem);
-          });
+      for (const item of e.dataTransfer.items) {
+        const entry = item.webkitGetAsEntry();
+        if (entry) {
+          await readEntries(entry, '');
         }
-        displayArrayAsList();
+      }
+
+      function displayArrayAsList() {
+        const listContainer = document.getElementById('list');
+        listContainer.innerHTML = '';
+        dataArray.forEach((item) => {
+          const listItem = document.createElement('li');
+          listItem.textContent = item;
+          listContainer.appendChild(listItem);
+        });
+      }
+
+      displayArrayAsList();
     });
+
     document.addEventListener('dragover', (e) => {
       e.preventDefault();
       e.stopPropagation();
