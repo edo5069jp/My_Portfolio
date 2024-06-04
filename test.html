@@ -13,7 +13,7 @@ function createDummyImage(width, height) {
 
     // テキストレイヤーを追加
     var textColor = new SolidColor();
-    textColor.rgb.hexValue = "333333"; // テキスト色 #333
+    textColor.rgb.hexValue = "666666"; // テキスト色 #666
     var textLayer = docRef.artLayers.add();
     textLayer.kind = LayerKind.TEXT;
     textLayer.textItem.contents = "Dummy";
@@ -21,6 +21,7 @@ function createDummyImage(width, height) {
     textLayer.textItem.color = textColor;
     textLayer.textItem.size = 24;
     textLayer.textItem.justification = Justification.CENTER;
+    textLayer.textItem.font = "Arial-BoldMT"; // 太字フォントを指定
     textLayer.textItem.kind = TextType.POINTTEXT;
 
     // テキストを中央に配置（修正）
@@ -30,15 +31,27 @@ function createDummyImage(width, height) {
 // ダイアログボックスを表示してユーザー入力を受け取る関数
 function getUserInput() {
     var dialog = new Window("dialog", "ダミー画像作成");
-    dialog.add("statictext", undefined, "幅 (px):");
-    var widthInput = dialog.add("edittext", undefined, "800");
-    dialog.add("statictext", undefined, "高さ (px):");
-    var heightInput = dialog.add("edittext", undefined, "600");
-    widthInput.characters = 10;
-    heightInput.characters = 10;
+    dialog.orientation = "column";
 
-    dialog.add("button", undefined, "OK", {name: "ok"});
-    dialog.add("button", undefined, "キャンセル", {name: "cancel"});
+    // 幅を広げるための設定
+    dialog.alignChildren = "left";
+    dialog.margins = 20;
+    dialog.spacing = 10;
+
+    var widthGroup = dialog.add("group");
+    widthGroup.add("statictext", undefined, "幅 (px):");
+    var widthInput = widthGroup.add("edittext", undefined, "800");
+    widthInput.characters = 20;
+
+    var heightGroup = dialog.add("group");
+    heightGroup.add("statictext", undefined, "高さ (px):");
+    var heightInput = heightGroup.add("edittext", undefined, "600");
+    heightInput.characters = 20;
+
+    var buttonGroup = dialog.add("group");
+    buttonGroup.alignment = "center";
+    buttonGroup.add("button", undefined, "OK", {name: "ok"});
+    buttonGroup.add("button", undefined, "キャンセル", {name: "cancel"});
 
     if (dialog.show() == 1) {
         return {
