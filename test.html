@@ -63,15 +63,13 @@ function getUserInput() {
     }
 }
 
-// ユーザー入力を受け取り、ダミー画像を生成する
-var userInput = getUserInput();
-if (userInput) {
-    createDummyImage(userInput.width, userInput.height);
+// メイン関数
+function main() {
+    var userInput = getUserInput();
+    if (userInput) {
+        createDummyImage(userInput.width, userInput.height);
+    }
 }
 
-
-// ユーザー入力を受け取り、ダミー画像を生成する
-var userInput = getUserInput();
-if (userInput) {
-    createDummyImage(userInput.width, userInput.height);
-}
+// スクリプト実行
+main();
