@@ -3,11 +3,28 @@
 // 新しいドキュメントを作成する関数
 function createDummyImage(width, height) {
     var docRef = app.documents.add(width, height, 72, "DummyImage", NewDocumentMode.RGB);
-    var newLayer = docRef.artLayers.add();
-    newLayer.name = "Background";
+
+    // 背景色を設定
+    var bgColor = new SolidColor();
+    bgColor.rgb.hexValue = "cccccc"; // 背景色 #ccc
     docRef.selection.selectAll();
-    docRef.selection.fill(app.foregroundColor);
+    docRef.selection.fill(bgColor);
     docRef.selection.deselect();
+
+    // テキストレイヤーを追加
+    var textColor = new SolidColor();
+    textColor.rgb.hexValue = "333333"; // テキスト色 #333
+    var textLayer = docRef.artLayers.add();
+    textLayer.kind = LayerKind.TEXT;
+    textLayer.textItem.contents = "Dummy";
+    textLayer.textItem.position = [width / 2, height / 2]; // 中央に配置
+    textLayer.textItem.color = textColor;
+    textLayer.textItem.size = 24;
+    textLayer.textItem.justification = Justification.CENTER;
+    textLayer.textItem.kind = TextType.POINTTEXT;
+
+    // テキストを中央に配置（修正）
+    textLayer.textItem.position = [width / 2, height / 2 + textLayer.textItem.size / 2];
 }
 
 // ダイアログボックスを表示してユーザー入力を受け取る関数
