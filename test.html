@@ -73,3 +73,15 @@ function main() {
 
 // スクリプト実行
 main();
+
+
+
+javascript:(function(){
+    var currentURL = window.location.href;
+    if(currentURL.includes('?wcmmode=disabled')) {
+        var newURL = currentURL.replace('?wcmmode=disabled', '').replace('https://siteadmin10.bk.mufg.jp', 'https://siteadmin10.bk.mufg.jp/_editor.html');
+    } else if(currentURL.includes('_editor.html')) {
+        var newURL = currentURL.replace('_editor.html', '') + '?wcmmode=disabled';
+    }
+    window.location.href = newURL;
+})();
