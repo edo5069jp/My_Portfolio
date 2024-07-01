@@ -1,79 +1,19 @@
-#target photoshop
+このJavaScriptコードは、ローン計算や入力バリデーション、数値のフォーマットを行うために使用されます。以下にその機能について説明します。
 
-// 新しいドキュメントを作成する関数
-function createDummyImage(width, height) {
-    var docRef = app.documents.add(width, height, 72, "DummyImage", NewDocumentMode.RGB);
+まず、定数として、最小返済額を表すMIN_REPAYが1000に設定され、最大支払い回数を表すMAX_COUNTが168に設定されています。
 
-    // 背景色を設定
-    var bgColor = new SolidColor();
-    bgColor.rgb.hexValue = "cccccc"; // 背景色 #ccc
-    docRef.selection.selectAll();
-    docRef.selection.fill(bgColor);
-    docRef.selection.deselect();
+getParams()関数は、URLのクエリパラメータを取得し、キーと値のペアをオブジェクトとして返す機能を持っています。PMT(ir, np, pv)関数は、ローンの定期支払い額を計算するもので、金利（ir）、支払い回数（np）、現在価値（pv）を引数に取ります。NPER(Rate, Pmt, PV)関数は、支払い回数を計算し、金利（Rate）、毎月の支払い額（Pmt）、現在価値（PV）を引数に取ります。
 
-    // テキストレイヤーを追加
-    var textColor = new SolidColor();
-    textColor.rgb.hexValue = "666666"; // テキスト色 #666
-    var textLayer = docRef.artLayers.add();
-    textLayer.kind = LayerKind.TEXT;
-    textLayer.textItem.contents = "Dummy";
-    textLayer.textItem.position = [width / 2, height / 2]; // 中央に配置
-    textLayer.textItem.color = textColor;
-    textLayer.textItem.size = 24;
-    textLayer.textItem.justification = Justification.CENTER;
-    textLayer.textItem.font = "Arial-BoldMT"; // 太字フォントを指定
-    textLayer.textItem.kind = TextType.POINTTEXT;
+getMinRepay(money, repay)関数は、最小返済額を計算し、借入金額（money）と返済額（repay）を引数に取ります。checkLastPay(count, remain, rate, repay)関数は、最後の支払いが1000円以上になるかどうかをチェックし、支払い回数（count）、残りの借入金額（remain）、金利（rate）、返済額（repay）を引数に取ります。
 
-    // テキストを中央に配置（修正）
-    textLayer.textItem.position = [width / 2, height / 2 + textLayer.textItem.size / 2];
-}
+数値を指定した桁数に四捨五入するround(num, digit)関数、切り上げるroundUp(num, digit)関数、切り捨てるroundDown(value, num)関数も含まれています。
 
-// ダイアログボックスを表示してユーザー入力を受け取る関数
-function getUserInput() {
-    var dialog = new Window("dialog", "ダミー画像作成");
-    dialog.orientation = "column";
+バリデーション関数としては、借入金額のバリデーションを行うmValidateAmount(value)、月数のバリデーションを行うmValidateMonth(value)、利率のバリデーションを行うmValidateRate(value)、そしてそれぞれの前提条件を満たすことをチェックするpValidateAmount(value), pValidateRepay(value), pValidateRate(value)があります。
 
-    // 幅を広げるための設定
-    dialog.alignChildren = "left";
-    dialog.margins = 15;
-    dialog.spacing = 10;
+その他の関数として、月数を年と月に変換するto_year(value)、数値にカンマを挿入するto_comma(from)があります。
 
-    var widthGroup = dialog.add("group");
-    widthGroup.add("statictext", undefined, "幅 (px):");
-    var widthInput = widthGroup.add("edittext", undefined, "800");
-    widthInput.characters = 15;
+また、jQueryを拡張して、エラーメッセージを表示または非表示にするerrorHtml(message)、全角数字を半角数字に変換するz2h()、スペースを削除するconvSpace()、カンマを削除するconvComma()といったメソッドを追加しています。
 
-    var heightGroup = dialog.add("group");
-    heightGroup.add("statictext", undefined, "高さ (px):");
-    var heightInput = heightGroup.add("edittext", undefined, "600");
-    heightInput.characters = 15;
+最後に、Validateオブジェクトには、数値かどうかをチェックするisNumber(value, f)、数値が指定した範囲内にあるかをチェックするinRange(value, min, max)といったメソッドが含まれています。
 
-    var buttonGroup = dialog.add("group");
-    buttonGroup.alignment = "center";
-    buttonGroup.add("button", undefined, "OK", {name: "ok"});
-    buttonGroup.add("button", undefined, "キャンセル", {name: "cancel"});
-
-    if (dialog.show() == 1) {
-        return {
-            width: parseInt(widthInput.text),
-            height: parseInt(heightInput.text)
-        };
-    } else {
-        return null;
-    }
-}
-
-// メイン関数
-function main() {
-    var userInput = getUserInput();
-    if (userInput) {
-        createDummyImage(userInput.width, userInput.height);
-    }
-}
-
-// スクリプト実行
-main();
-
-
-
-
+このロジックは、ローン計算アプリケーションなどにおいて、ユーザー入力のバリデーションや返済計算に使用されることを目的としています。
