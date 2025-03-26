@@ -6,7 +6,7 @@ chrome.storage.sync.get(["disabledDomains", "isEnabled"], (data) => {
   let isEnabled = data.isEnabled ?? true;
 
   // 修正: shouldDisable の判定を修正
-  const shouldDisable = disabledDomains.includes(currentDomain) ? true : !isEnabled;
+  const shouldDisable = disabledDomains.includes(currentDomain) ? true : isEnabled;
   currentState = shouldDisable;
 
   if (shouldDisable) {
@@ -24,17 +24,18 @@ chrome.runtime.onMessage.addListener((message) => {
     return;
   }
 
-  // 修正: currentState を明示的に確認
-  if (message.isEnabled && currentState !== false) {
-    enablePostSubmission();
-    currentState = false;
-  } else if (!message.isEnabled && currentState !== true) {
+  // 修正: 意図しない enablePostSubmission() 実行を防止
+  if (message.isEnabled && currentState !== true) {
     disablePostSubmission();
     currentState = true;
+  } else if (!message.isEnabled && currentState !== false) {
+    enablePostSubmission();
+    currentState = false;
   }
 });
 
 function disablePostSubmission() {
+  if (currentState === true) return; // すでに無効化されていれば何もしない
   console.log("【適用】POST送信ボタンを無効化");
 
   document.addEventListener("click", preventClick, true);
@@ -42,6 +43,7 @@ function disablePostSubmission() {
 }
 
 function enablePostSubmission() {
+  if (currentState === false) return; // すでに有効なら何もしない
   console.log("【解除】POST送信ボタンを有効化");
 
   document.removeEventListener("click", preventClick, true);
