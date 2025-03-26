@@ -21,20 +21,20 @@ chrome.action.onClicked.addListener((tab) => {
     chrome.storage.sync.set({ isEnabled: newState }, () => {
       console.log("拡張機能の状態:", newState ? "有効" : "無効");
 
-      const iconPath = newState ? "icons/on.png" : "icons/off.png";
-      chrome.action.setIcon({ path: iconPath });
-
-      // `content.js` が実行されていない可能性があるので強制ロード
+      // `content.js` を実行してからメッセージを送る
       chrome.scripting.executeScript({
         target: { tabId: tab.id },
         files: ["content.js"]
       }, () => {
-        // `content.js` を実行後にメッセージを送る
         chrome.tabs.sendMessage(tab.id, { isEnabled: newState }, (response) => {
           if (chrome.runtime.lastError) {
             console.warn("content.js にメッセージを送れませんでした。", chrome.runtime.lastError);
           } else {
             console.log("content.js に状態変更を通知");
+
+            // アイコンの変更を最後に適用
+            const iconPath = newState ? "icons/on.png" : "icons/off.png";
+            chrome.action.setIcon({ path: iconPath });
           }
         });
       });

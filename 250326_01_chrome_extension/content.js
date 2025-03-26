@@ -30,12 +30,17 @@ chrome.storage.sync.get(["disabledDomains", "isEnabled"], (data) => {
 
 function disablePostSubmission() {
   console.log("POST送信ボタンを無効化");
+
+  // イベントリスナーが重複しないように削除してから追加
+  enablePostSubmission();
+
   document.addEventListener("click", preventClick, true);
   document.addEventListener("submit", preventSubmit, true);
 }
 
 function enablePostSubmission() {
   console.log("POST送信ボタンを有効化（元に戻す）");
+
   document.removeEventListener("click", preventClick, true);
   document.removeEventListener("submit", preventSubmit, true);
 }
