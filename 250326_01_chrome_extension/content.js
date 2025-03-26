@@ -5,7 +5,8 @@ chrome.storage.sync.get(["disabledDomains", "isEnabled"], (data) => {
   const currentDomain = window.location.hostname;
   let isEnabled = data.isEnabled ?? true;
 
-  const shouldDisable = disabledDomains.includes(currentDomain) || isEnabled;
+  // 修正: shouldDisable の判定を修正
+  const shouldDisable = disabledDomains.includes(currentDomain) ? true : !isEnabled;
   currentState = shouldDisable;
 
   if (shouldDisable) {
@@ -13,23 +14,24 @@ chrome.storage.sync.get(["disabledDomains", "isEnabled"], (data) => {
   } else {
     enablePostSubmission();
   }
+});
 
-  chrome.runtime.onMessage.addListener((message) => {
-    console.log("受信したメッセージ:", message);
+chrome.runtime.onMessage.addListener((message) => {
+  console.log("受信したメッセージ:", message);
 
-    if (disabledDomains.includes(currentDomain)) {
-      console.log("対象サイトなのでON/OFF不可:", currentDomain);
-      return;
-    }
+  if (disabledDomains.includes(currentDomain)) {
+    console.log("対象サイトなのでON/OFF不可:", currentDomain);
+    return;
+  }
 
-    if (message.isEnabled && currentState !== true) {
-      disablePostSubmission();
-      currentState = true;
-    } else if (!message.isEnabled && currentState !== false) {
-      enablePostSubmission();
-      currentState = false;
-    }
-  });
+  // 修正: currentState を明示的に確認
+  if (message.isEnabled && currentState !== false) {
+    enablePostSubmission();
+    currentState = false;
+  } else if (!message.isEnabled && currentState !== true) {
+    disablePostSubmission();
+    currentState = true;
+  }
 });
 
 function disablePostSubmission() {
