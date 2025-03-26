@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "POST送信無効化",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icons/off.png",
+      "48": "icons/off.png",
+      "128": "icons/off.png"
+    }
+  }
+}
