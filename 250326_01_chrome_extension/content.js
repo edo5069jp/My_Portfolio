@@ -7,10 +7,14 @@ chrome.storage.sync.get(["disabledDomains", "isEnabled"], (data) => {
 
   if (shouldDisable) {
     disablePostSubmission();
+  } else {
+    enablePostSubmission();
   }
 
   // `background.js` からのメッセージを受け取る（オンオフの切り替え）
   chrome.runtime.onMessage.addListener((message) => {
+    console.log("受信したメッセージ:", message);
+
     if (disabledDomains.includes(currentDomain)) {
       console.log("対象サイトなのでON/OFF不可:", currentDomain);
       return; // 対象サイトは変更不可

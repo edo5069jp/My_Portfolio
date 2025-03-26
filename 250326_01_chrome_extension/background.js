@@ -10,7 +10,7 @@ chrome.action.onClicked.addListener((tab) => {
     const disabledDomains = data.disabledDomains || [];
     const currentDomain = new URL(tab.url).hostname;
     const isTargetSite = disabledDomains.includes(currentDomain);
-    
+
     if (isTargetSite) {
       console.log("対象サイトなのでON/OFF不可:", currentDomain);
       return; // 対象サイトは変更不可
@@ -24,16 +24,20 @@ chrome.action.onClicked.addListener((tab) => {
       const iconPath = newState ? "icons/on.png" : "icons/off.png";
       chrome.action.setIcon({ path: iconPath });
 
-      // `content.js` に状態変更を通知
+      // `content.js` が実行されていない可能性があるので強制ロード
       chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        func: updateContentScript,
-        args: [newState]
+        files: ["content.js"]
+      }, () => {
+        // `content.js` を実行後にメッセージを送る
+        chrome.tabs.sendMessage(tab.id, { isEnabled: newState }, (response) => {
+          if (chrome.runtime.lastError) {
+            console.warn("content.js にメッセージを送れませんでした。", chrome.runtime.lastError);
+          } else {
+            console.log("content.js に状態変更を通知");
+          }
+        });
       });
     });
   });
 });
-
-function updateContentScript(isEnabled) {
-  chrome.runtime.sendMessage({ isEnabled });
-}
