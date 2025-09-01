@@ -1,13 +1,11 @@
 {
   "manifest_version": 3,
   "name": "ポスト送信無効",
-  "version": "1.0.0",
-  "description": "指定のPOST送信先を持つフォーム内のリンク・送信を無効化します。",
-  "permissions": ["storage", "contextMenus"],
+  "version": "1.1.0",
+  "description": "指定のPOST送信先を無効化（UI＋ネットワーク層）",
+  "permissions": ["storage", "contextMenus", "declarativeNetRequest"],
   "host_permissions": ["<all_urls>"],
-  "background": {
-    "service_worker": "background.js"
-  },
+  "background": { "service_worker": "background.js" },
   "action": {
     "default_title": "ポスト送信無効",
     "default_icon": {
